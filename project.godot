@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="AllAroundTheWorld"
+run/main_scene="uid://b6kb866y3e4aa"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

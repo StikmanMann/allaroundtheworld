@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6kb866y3e4aa"]
+
+[ext_resource type="PackedScene" uid="uid://cjlojmoyhw2cp" path="res://Nikita/earth.tscn" id="1_248vy"]
+[ext_resource type="Texture2D" uid="uid://cn2wdmm2xiodm" path="res://Nikita/textures/panorama_image.png" id="2_vvf8p"]
+[ext_resource type="PackedScene" uid="uid://tvwwstaorixw" path="res://Nikita/camera_hub.tscn" id="3_ur8lc"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ur8lc"]
+panorama = ExtResource("2_vvf8p")
+
+[sub_resource type="Sky" id="Sky_fkqbs"]
+sky_material = SubResource("PanoramaSkyMaterial_ur8lc")
+
+[sub_resource type="Environment" id="Environment_ur8lc"]
+background_mode = 2
+sky = SubResource("Sky_fkqbs")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ur8lc")
+
+[node name="Earth_Final2" parent="." instance=ExtResource("1_248vy")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CameraHub" parent="." instance=ExtResource("3_ur8lc")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0337074, -0.226039, 0.973535, 0.00782163, 0.974118, 0.225904, -0.999401, 0, 0.034603, 15.6131, 3.61956, 0)

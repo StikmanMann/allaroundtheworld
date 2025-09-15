@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjlojmoyhw2cp"]
+
+[ext_resource type="PackedScene" uid="uid://7fijqcjxggit" path="res://Nikita/source/Earth_Final.fbx" id="1_mnd7v"]
+[ext_resource type="Texture2D" uid="uid://cw4gkryn2sl7y" path="res://Nikita/textures/Earth2_Water_BaseColor.png" id="2_v2ft5"]
+[ext_resource type="Texture2D" uid="uid://da0uksbt2mkqw" path="res://Nikita/textures/Earth2_Land_BaseColor.png" id="3_drefq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyl1s"]
+albedo_texture = ExtResource("2_v2ft5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pxso"]
+albedo_texture = ExtResource("3_drefq")
+
+[node name="Earth_Final" instance=ExtResource("1_mnd7v")]
+
+[node name="earth4" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tyl1s")
+surface_material_override/1 = SubResource("StandardMaterial3D_3pxso")

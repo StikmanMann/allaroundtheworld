@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cb5cav8r8f47b"]
-
-[node name="VehicleBody3D" type="VehicleBody3D"]
-
-[node name="CSG" type="Node3D" parent="."]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSG"]

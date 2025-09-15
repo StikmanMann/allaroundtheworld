@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1rip77vefx3i"]
+
+[ext_resource type="Texture2D" uid="uid://b3y733ngio1nx" path="res://Florian/cat.jpg" id="1_a202f"]
+[ext_resource type="Script" uid="uid://bc47hy67mfo7v" path="res://Florian/sprite_3d.gd" id="2_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/PlayerRigidbody.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/point_thing.tscn" id="4_ylvgl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eral8"]
+albedo_color = Color(0.243542, 0.196121, 0.0639371, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4xowi"]
+material = SubResource("StandardMaterial3D_eral8")
+size = Vector2(500, 500)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a202f"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a0tk4"]
+friction = 0.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_4xowi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_a202f")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+texture = ExtResource("1_a202f")
+script = ExtResource("2_a0tk4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.829857, 0.557977, 0, -0.557977, 0.829857, 0, 0, 0)
+
+[node name="PlayerRigidbody" parent="." instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187409, 7, 11.0325)
+physics_material_override = SubResource("PhysicsMaterial_a0tk4")
+
+[node name="CSG" type="Node3D" parent="."]
+
+[node name="House1" type="Node3D" parent="CSG"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSG/House1"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/House1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.5, -13)
+size = Vector3(22, 6, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSG/House1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.5, -36)
+size = Vector3(22, 6, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSG/House1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 5, -24.5)
+size = Vector3(22, 1, 24)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSG/House1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 12.5, -4.25, -7.57661)
+size = Vector3(4, 37, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/House1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, -24.5)
+size = Vector3(1, 6, 24)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSG/House1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 2.5, -24.5)
+size = Vector3(1, 6, 24)
+
+[node name="PointThing" parent="." instance=ExtResource("4_ylvgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 5)

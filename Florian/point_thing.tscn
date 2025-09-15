@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8gnb0kut2n5h"]
+
+[ext_resource type="Script" uid="uid://cyw0eu5pqd3wm" path="res://Florian/point_thing.gd" id="1_hr556"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hr556"]
+
+[node name="PointThing" type="Node3D"]
+script = ExtResource("1_hr556")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hr556")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

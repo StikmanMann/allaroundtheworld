@@ -3,8 +3,9 @@ extends Node3D
 
 @onready var red_circle: Sprite3D = $RedCircle
 @onready var on_screen: VisibleOnScreenNotifier3D = $VisibleOnScreenNotifier3D
-@export var points_worth = 10
-@export var point_id = "Debug Object"
+@export var points_worth : int= 10
+@export var points_name = "Debug Object"
+@export var points_multiplier : float = 1
 
 func _ready() -> void:
 	PictureTakeablesArray._add_point_picture(self)

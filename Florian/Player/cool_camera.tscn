@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://4hac7s0wvoye"]
 
-[ext_resource type="Script" uid="uid://dff1mtnypemb4" path="res://Florian/cool_camera.gd" id="1_87r7f"]
+[ext_resource type="Script" uid="uid://dff1mtnypemb4" path="res://Florian/Player/cool_camera.gd" id="1_87r7f"]
 
 [node name="CoolCamera" type="Node3D"]
 script = ExtResource("1_87r7f")

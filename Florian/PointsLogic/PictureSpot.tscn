@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw73kprk7ptvn"]
+
+[ext_resource type="Script" uid="uid://44ieb2gc6uff" path="res://Florian/PointsLogic/picture_spot.gd" id="1_r37ay"]
+
+[node name="PictureSpot" type="Area3D"]
+script = ExtResource("1_r37ay")

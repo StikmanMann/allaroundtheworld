@@ -1,0 +1,39 @@
+extends Node3D
+@onready var label: Label = $Control/Label
+@export var player : PlayerRB = null
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("take_picture"):
+		_take_picture()
+
+func _take_picture():
+	_calculate_points()
+	pass
+
+var points_string = ""
+var total_points = 0
+var total_points_multipliers = 1
+
+func _calculate_points():
+	points_string = ""
+	total_points = 0
+	total_points_multipliers = 1
+	print("Taking Picture!!!")
+	_calculate_picture_objects()
+	_calculate_picture_spots()
+	label.text = "%s\nTotal points: %d x %.2f = %.2f" % [points_string, total_points, total_points_multipliers, total_points * total_points_multipliers]
+
+func _calculate_picture_objects():
+	for takeable in PictureTakeablesArray.picture_takables:
+		print("Checking takeable")
+		if takeable.picture_taken():
+			points_string += "{name} {points}\n".format({"name" : takeable.points_name, "points": str(takeable.points_worth)})
+			total_points += takeable.points_worth
+			total_points_multipliers *= takeable.points_multiplier
+
+func _calculate_picture_spots():
+	for spot in PictureTakeablesArray.picture_spots:
+		if spot.picture_taken(player):
+			points_string += "{name} {points}\n".format({"name" : spot.points_name, "points": str(spot.points_worth)})
+			total_points += spot.points_worth
+			total_points_multipliers *= spot.points_multiplier

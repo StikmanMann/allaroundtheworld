@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5552lenumx2j"]
+
+[ext_resource type="Texture2D" uid="uid://biqmx6ki5lbi" path="res://Amanda/Sprite assets/sax.png" id="1_von0k"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_1sypp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe45m"]
+atlas = ExtResource("1_von0k")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggwrn"]
+atlas = ExtResource("1_von0k")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6eh6"]
+atlas = ExtResource("1_von0k")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seofy"]
+atlas = ExtResource("1_von0k")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eki2l"]
+atlas = ExtResource("1_von0k")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65unk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe45m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggwrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6eh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seofy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eki2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="saxophone" type="AnimatedSprite3D"]
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_65unk")
+autoplay = "default"
+frame_progress = 0.107993
+
+[node name="PointThing" parent="." instance=ExtResource("2_1sypp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+points_name = "Saxophone"

@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://bybsn53hd1mge"]
+
+[ext_resource type="Texture2D" uid="uid://bi8fi3cxlh3nv" path="res://Amanda/Sprite assets/guys-2.png" id="1_e8hqk"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_fmp4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yb5k"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pcgq"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjxy8"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpbu6"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olerd"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqqsa"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(50, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0esq"]
+atlas = ExtResource("1_e8hqk")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3af0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yb5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pcgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjxy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpbu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olerd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqqsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0esq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="guys" type="AnimatedSprite3D"]
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_f3af0")
+autoplay = "default"
+frame_progress = 0.448355
+
+[node name="PointThing" parent="." instance=ExtResource("2_fmp4l")]
+points_name = "Guys"

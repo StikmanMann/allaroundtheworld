@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl8f27acwi1ge"]
+
+[ext_resource type="Script" uid="uid://bgolfgrq66diw" path="res://npc_path_follower.gd" id="1_wwc8n"]
+[ext_resource type="PackedScene" uid="uid://bk4djtjemu7we" path="res://Florian/Entity/People/guitar.tscn" id="2_58cfc"]
+
+[node name="SaxophonePath" type="PathFollow3D"]
+script = ExtResource("1_wwc8n")
+metadata/_custom_type_script = "uid://bgolfgrq66diw"
+
+[node name="guitar" parent="." instance=ExtResource("2_58cfc")]

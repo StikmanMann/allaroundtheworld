@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxkw8rhvyjfjg"]
+
+[ext_resource type="Texture2D" uid="uid://dkt1ynydnm1k5" path="res://Amanda/Sprite assets/guy_drink-2.png" id="1_ykbw8"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_xudnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ekj"]
+atlas = ExtResource("1_ykbw8")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wlxe"]
+atlas = ExtResource("1_ykbw8")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp4i5"]
+atlas = ExtResource("1_ykbw8")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsn4b"]
+atlas = ExtResource("1_ykbw8")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq3k7"]
+atlas = ExtResource("1_ykbw8")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjsfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ekj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wlxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp4i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsn4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq3k7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="guy_drinking" type="AnimatedSprite3D"]
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_vjsfa")
+autoplay = "default"
+frame_progress = 0.372896
+
+[node name="PointThing" parent="." instance=ExtResource("2_xudnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+points_name = "Drinking Guy"

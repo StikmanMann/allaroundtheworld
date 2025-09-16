@@ -9,6 +9,7 @@
 script = ExtResource("1_hr556")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_hr556")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
@@ -17,4 +18,5 @@ mesh = SubResource("BoxMesh_hr556")
 transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
 visible = false
 billboard = 2
+no_depth_test = true
 texture = ExtResource("2_wfrpx")

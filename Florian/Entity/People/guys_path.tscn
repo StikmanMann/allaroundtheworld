@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg2j3hafqvnup"]
+
+[ext_resource type="Script" uid="uid://bgolfgrq66diw" path="res://npc_path_follower.gd" id="1_65dap"]
+[ext_resource type="PackedScene" uid="uid://bybsn53hd1mge" path="res://Florian/Entity/People/guys.tscn" id="2_0ay0d"]
+
+[node name="SaxophonePath" type="PathFollow3D"]
+script = ExtResource("1_65dap")
+metadata/_custom_type_script = "uid://bgolfgrq66diw"
+
+[node name="guys" parent="." instance=ExtResource("2_0ay0d")]

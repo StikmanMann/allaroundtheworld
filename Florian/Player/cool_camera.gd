@@ -27,6 +27,7 @@ func _calculate_picture_objects():
 	for takeable in PictureTakeablesArray.picture_takables:
 		print("Checking takeable")
 		if takeable.picture_taken():
+			
 			points_string += "{name} {points}\n".format({"name" : takeable.points_name, "points": str(takeable.points_worth)})
 			total_points += takeable.points_worth
 			total_points_multipliers *= takeable.points_multiplier

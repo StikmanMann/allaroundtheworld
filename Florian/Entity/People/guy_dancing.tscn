@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://cygl2cn7nvit1"]
+
+[ext_resource type="Texture2D" uid="uid://bqmxw2uaknw3g" path="res://Amanda/Sprite assets/dancing_guy.png" id="1_uin2d"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_0mw85"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp7jc"]
+atlas = ExtResource("1_uin2d")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m36jp"]
+atlas = ExtResource("1_uin2d")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj3ey"]
+atlas = ExtResource("1_uin2d")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5kgn"]
+atlas = ExtResource("1_uin2d")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20vrk"]
+atlas = ExtResource("1_uin2d")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5owg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp7jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m36jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj3ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5kgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20vrk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dancing_guy" type="AnimatedSprite3D"]
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_5owg6")
+autoplay = "default"
+frame_progress = 0.890734
+
+[node name="PointThing" parent="." instance=ExtResource("2_0mw85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+points_name = "Guy Dancing"

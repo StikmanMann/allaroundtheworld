@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://by5cq6m32hbor"]
+
+[ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_6v0xc"]
+[ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_82wr0"]
+[ext_resource type="PackedScene" uid="uid://dvrnfjtmupucv" path="res://Florian/Props/table.tscn" id="3_tw6g5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eral8"]
+albedo_texture = ExtResource("1_6v0xc")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_82wr0"]
+material = SubResource("StandardMaterial3D_eral8")
+size = Vector2(500, 500)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tw6g5"]
+
+[node name="Oktoberfest" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_82wr0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378755, 0)
+shape = SubResource("WorldBoundaryShape3D_tw6g5")
+
+[node name="PlayerRigidbody" parent="." instance=ExtResource("2_82wr0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="Table2" parent="." instance=ExtResource("3_tw6g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1)

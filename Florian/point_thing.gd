@@ -1,5 +1,7 @@
 class_name PointPicture
 extends Node3D
+
+@onready var red_circle: Sprite3D = $RedCircle
 @onready var on_screen: VisibleOnScreenNotifier3D = $VisibleOnScreenNotifier3D
 @export var points_worth = 10
 @export var point_id = "Debug Object"
@@ -8,5 +10,18 @@ func _ready() -> void:
 	PictureTakeablesArray._add_point_picture(self)
 
 func picture_taken() -> bool:
-	print(on_screen.is_on_screen())
-	return on_screen.is_on_screen()
+	var in_picture = on_screen.is_on_screen()
+	print(in_picture)
+	if in_picture:
+		show_red_cicle()
+	else:
+		hide_red_circle()
+	return in_picture
+	
+func show_red_cicle():
+	print("Showing red circle")
+	red_circle.show()
+
+func hide_red_circle():
+	print("Hiding red circle")
+	red_circle.hide()

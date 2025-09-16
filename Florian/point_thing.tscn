@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8gnb0kut2n5h"]
+[gd_scene load_steps=4 format=3 uid="uid://c8gnb0kut2n5h"]
 
 [ext_resource type="Script" uid="uid://cyw0eu5pqd3wm" path="res://Florian/point_thing.gd" id="1_hr556"]
+[ext_resource type="Texture2D" uid="uid://bpqf3a8f2fp7q" path="res://Florian/Sprites/red_circle.png" id="2_wfrpx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hr556"]
 
@@ -11,3 +12,9 @@ script = ExtResource("1_hr556")
 mesh = SubResource("BoxMesh_hr556")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[node name="RedCircle" type="Sprite3D" parent="."]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
+visible = false
+billboard = 2
+texture = ExtResource("2_wfrpx")

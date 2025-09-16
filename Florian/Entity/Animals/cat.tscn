@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://xa3ee14whqj6"]
+
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/point_thing.tscn" id="1_ths60"]
+[ext_resource type="Texture2D" uid="uid://b3y733ngio1nx" path="res://Florian/Sprites/cat.jpg" id="2_f6meo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vea6b"]
+
+[node name="Cat" type="RigidBody3D"]
+
+[node name="PointThing" parent="." instance=ExtResource("1_ths60")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_f6meo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vea6b")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3y733ngio1nx"
-path.s3tc="res://.godot/imported/cat.jpg-63f722852b826a4e9490fdc6ae6fc912.s3tc.ctex"
+uid="uid://bpqf3a8f2fp7q"
+path.s3tc="res://.godot/imported/red_circle.png-9b2f9a11caf156c000fd1466bacd9c77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Florian/cat.jpg"
-dest_files=["res://.godot/imported/cat.jpg-63f722852b826a4e9490fdc6ae6fc912.s3tc.ctex"]
+source_file="res://Florian/Sprites/red_circle.png"
+dest_files=["res://.godot/imported/red_circle.png-9b2f9a11caf156c000fd1466bacd9c77.s3tc.ctex"]
 
 [params]
 

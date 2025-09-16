@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1rip77vefx3i"]
+[gd_scene load_steps=11 format=3 uid="uid://d1rip77vefx3i"]
 
-[ext_resource type="Texture2D" uid="uid://b3y733ngio1nx" path="res://Florian/cat.jpg" id="1_a202f"]
+[ext_resource type="Texture2D" uid="uid://b3y733ngio1nx" path="res://Florian/Sprites/cat.jpg" id="1_a202f"]
 [ext_resource type="Script" uid="uid://bc47hy67mfo7v" path="res://Florian/sprite_3d.gd" id="2_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/PlayerRigidbody.tscn" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/point_thing.tscn" id="4_ylvgl"]
@@ -16,6 +16,16 @@ size = Vector2(500, 500)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a0tk4"]
 friction = 0.0
+
+[sub_resource type="Curve3D" id="Curve3D_ylvgl"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -45, 0, 0, 0, 0, 0, 0, 32.3104, 0.419155, -45.9028, 0, 0, 0, 0, 0, 0, 30.015, 0, 1.125, 0, 0, 0, 0, 0, 0, -3.95776, 3.97149, -6.58477),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ylvgl"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -72,3 +82,13 @@ size = Vector3(1, 6, 24)
 
 [node name="PointThing" parent="." instance=ExtResource("4_ylvgl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 5)
+
+[node name="AI" type="Node3D" parent="."]
+
+[node name="Path3D" type="Path3D" parent="AI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+curve = SubResource("Curve3D_ylvgl")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="AI"]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -15, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_ylvgl")

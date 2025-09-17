@@ -23,7 +23,7 @@ func _calculate_points():
 	_calculate_picture_spots()
 	label.text = "%s\nTotal points: %d x %.2f = %.2f" % [points_string, total_points, total_points_multipliers, total_points * total_points_multipliers]
 
-var acceptable_length = 0.1
+var acceptable_length = 1
 
 func _calculate_picture_objects():
 	for takeable in PictureTakeablesArray.picture_takables:
@@ -41,8 +41,8 @@ func _calculate_picture_objects():
 			if raycast.is_colliding():
 				print("raycast hit")
 				var raycast_hit = raycast.get_collision_point()
-				print(str((raycast_hit - self.global_position).length()))
-				if (raycast_hit - self.global_position).length() > acceptable_length:
+				print(str((raycast_hit - takeable.global_position).length()))
+				if (raycast_hit - takeable.global_position).length() > acceptable_length:
 					print("Not in range!")
 					raycast.queue_free()
 					continue

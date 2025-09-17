@@ -14,8 +14,8 @@ var max_air_speed = 1
 var air_acceleration = max_speed * 20
 
 var friction = 16
+var jump_velocity = 6
 
-var jump_velocity = 5
 
 
 var currentSpeed = 0
@@ -85,7 +85,7 @@ func _physics_process(delta):
 	var lR = 0 - Input.get_action_strength("left", 1) + Input.get_action_strength("right", 1)
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir : Vector3 = Vector3(lR, 0, fB).rotated(Vector3.UP, bounding_box.rotation.y)
+	var input_dir : Vector3 = Vector3(lR, 0, fB).rotated(Vector3.UP, bounding_box.global_rotation.y)
 	
 	var wishDir = input_dir.normalized()
 	

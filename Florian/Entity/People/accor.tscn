@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfq21ks4r8gma"]
+[gd_scene load_steps=9 format=3 uid="uid://c4fw8rjct7vms"]
 
 [ext_resource type="Texture2D" uid="uid://bwdlms684oaxg" path="res://Amanda/Sprite assets/accor.png" id="1_gqqs6"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_rc5w7"]
@@ -54,4 +54,4 @@ sprite_frames = SubResource("SpriteFrames_80p6a")
 
 [node name="PointThing" parent="." instance=ExtResource("2_rc5w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-points_name = "Guitar"
+points_name = "Accordion"

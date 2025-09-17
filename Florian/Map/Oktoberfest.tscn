@@ -1,29 +1,41 @@
-[gd_scene load_steps=18 format=3 uid="uid://by5cq6m32hbor"]
+[gd_scene load_steps=27 format=3 uid="uid://by5cq6m32hbor"]
 
 [ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_6v0xc"]
 [ext_resource type="Texture2D" uid="uid://cd1v04y3nf1dv" path="res://Amanda/furni/Images/table_diffuse.jpg" id="1_tre0f"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_82wr0"]
 [ext_resource type="PackedScene" uid="uid://bobfhgsydmmr2" path="res://Florian/pyro.tscn" id="4_h8052"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="5_ygtpi"]
+[ext_resource type="Script" uid="uid://ddwcbl3nbt6j4" path="res://Florian/Map/lights.gd" id="6_g561u"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="6_miqpv"]
 [ext_resource type="PackedScene" uid="uid://bk4djtjemu7we" path="res://Florian/Entity/People/guitar.tscn" id="6_ptxqs"]
 [ext_resource type="PackedScene" uid="uid://c5552lenumx2j" path="res://Florian/Entity/People/saxophone.tscn" id="7_miqpv"]
 [ext_resource type="PackedScene" uid="uid://bybsn53hd1mge" path="res://Florian/Entity/People/guys.tscn" id="9_3box6"]
+[ext_resource type="PackedScene" uid="uid://bw73kprk7ptvn" path="res://Florian/PointsLogic/PictureSpot.tscn" id="10_28ddj"]
+[ext_resource type="Script" uid="uid://cu3fdbo1lelob" path="res://Florian/Map/dancing_people.gd" id="10_mbtuy"]
 [ext_resource type="PackedScene" uid="uid://k3ij7wrtwpms" path="res://Florian/table_0.tscn" id="10_ubr03"]
+[ext_resource type="PackedScene" uid="uid://oxm6ufgip22u" path="res://Florian/Props/tent.tscn" id="11_4etk5"]
+[ext_resource type="Texture2D" uid="uid://cx783frd814e6" path="res://Florian/Decals/power.png" id="11_bsfgy"]
 [ext_resource type="PackedScene" uid="uid://lrf6ltd1wwg1" path="res://Florian/Entity/People/waitress_path.tscn" id="12_g561u"]
+[ext_resource type="PackedScene" uid="uid://ctcspqlxrw22q" path="res://Florian/PhysicsProps/PhysicsBarrel.tscn" id="13_ijkca"]
+[ext_resource type="PackedScene" uid="uid://ow35tpunk744" path="res://Florian/PhysicsProps/physics_beer.tscn" id="18_3uiso"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g561u"]
 albedo_texture = ExtResource("1_tre0f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eral8"]
 albedo_texture = ExtResource("1_6v0xc")
-uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_82wr0"]
 material = SubResource("StandardMaterial3D_eral8")
 size = Vector2(500, 500)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tw6g5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijkca"]
+size = Vector3(33, 7, 29)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4etk5"]
+albedo_color = Color(0.51859, 0.210826, 0.0712605, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_4etk5"]
 closed = true
@@ -48,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378755, 0)
 shape = SubResource("WorldBoundaryShape3D_tw6g5")
 
 [node name="PlayerRigidbody" parent="." instance=ExtResource("2_82wr0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 1, -9)
 
 [node name="Stage" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
@@ -61,22 +73,33 @@ radius = 4.0
 
 [node name="Pyro" parent="Stage" instance=ExtResource("4_h8052")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.9, 2.6)
+visible = false
 
 [node name="Pyro2" parent="Stage" instance=ExtResource("4_h8052")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.9, 2.6)
+visible = false
 
 [node name="Pyro3" parent="Stage" instance=ExtResource("4_h8052")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.9, -2.4)
+visible = false
 
 [node name="Pyro4" parent="Stage" instance=ExtResource("4_h8052")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.9, -2.4)
+visible = false
 
 [node name="Interactable" parent="Stage" instance=ExtResource("5_ygtpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0.9, 1)
 
+[node name="guitar" parent="Stage" instance=ExtResource("6_ptxqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+
+[node name="saxophone" parent="Stage" instance=ExtResource("7_miqpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
 [node name="Truss" type="Node3D" parent="Stage"]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Stage/Truss"]
+use_collision = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Stage/Truss/CSGCombiner3D"]
 radius = 15.0
@@ -93,6 +116,8 @@ radius = 15.0
 height = 14.0
 
 [node name="Lights" type="Node3D" parent="Stage/Truss/CSGCombiner3D"]
+visible = false
+script = ExtResource("6_g561u")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Stage/Truss/CSGCombiner3D/Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 7, 14)
@@ -124,14 +149,21 @@ points_worth = 50
 points_name = "Stage Lights"
 points_multiplier = 1.5
 
-[node name="guitar" parent="Stage/Truss/CSGCombiner3D" instance=ExtResource("6_ptxqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="Stage/Truss/CSGCombiner3D"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -19.1421, 5.96001, -0.5)
+size = Vector3(11, 0.6, 2)
 
-[node name="saxophone" parent="Stage/Truss/CSGCombiner3D" instance=ExtResource("7_miqpv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+[node name="PictureSpot" parent="Stage/Truss" instance=ExtResource("10_28ddj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+points_multiplier = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Truss/PictureSpot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
+shape = SubResource("BoxShape3D_ijkca")
 
 [node name="DancingPeople" type="Node3D" parent="Stage"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+script = ExtResource("10_mbtuy")
 
 [node name="guys" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.9, 0)
@@ -139,13 +171,95 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.9, 0)
 [node name="guys2" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.24264, 0.9, 4.24264)
 
+[node name="guys3" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 9.53674e-07, 0.9, 6)
+
+[node name="guys4" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.24264, 0.9, 4.24264)
+
+[node name="guys5" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 6, 0.9, 4.76837e-07)
+
+[node name="guys6" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.24264, 0.9, -4.24264)
+
+[node name="guys7" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
+transform = Transform3D(1.49012e-07, 0, -1, 0, 1, 0, 1, 0, 1.49012e-07, -1.43051e-06, 0.9, -6)
+
+[node name="guys8" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.24264, 0.9, -4.24264)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Backstage" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -2)
+
+[node name="Powerhouse" type="CSGCombiner3D" parent="Backstage"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Backstage/Powerhouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -6)
+size = Vector3(1, 4, 12)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Backstage/Powerhouse/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Backstage/Powerhouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.5, -6)
+size = Vector3(1, 4, 12)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Backstage/Powerhouse"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.5, 1.5, -0.5)
+size = Vector3(1, 4, 12)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Backstage/Powerhouse"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.5, 1.5, -11.5)
+size = Vector3(1, 4, 12)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Backstage/Powerhouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4, -6)
+size = Vector3(12, 1, 12)
+material = SubResource("StandardMaterial3D_4etk5")
+
+[node name="Decal" type="Decal" parent="Backstage/Powerhouse"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 1, 2, -3)
+texture_albedo = ExtResource("11_bsfgy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backstage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 2.8, -6)
+
+[node name="Interactable" parent="Backstage" instance=ExtResource("5_ygtpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -11)
 
 [node name="Tables" type="Node3D" parent="."]
+
+[node name="merchant_tent3" parent="Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
 
 [node name="table0" parent="Tables" instance=ExtResource("10_ubr03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
@@ -222,17 +336,57 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 path = NodePath("..")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, 17)
 use_collision = true
-size = Vector3(1, 7, 13)
+size = Vector3(79, 7, 1)
 material = SubResource("StandardMaterial3D_tre0f")
 
-[node name="Decal" type="Decal" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -1)
-size = Vector3(2, 4, 6)
-texture_albedo = ExtResource("1_6v0xc")
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -59)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50, 3, -21)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 3, -21)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="Physics" type="Node3D" parent="."]
+
+[node name="PhysicsBarrel" parent="Physics" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.751997, -14.7)
+
+[node name="PhysicsBarrel2" parent="Physics" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0.751997, -14.7)
+
+[node name="PhysicsBarrel5" parent="Physics" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.751997, -14.7)
+
+[node name="PhysicsBarrel3" parent="Physics" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 2.252, -14.7)
+
+[node name="PhysicsBarrel4" parent="Physics" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.252, -14.7)
+
+[node name="Barrels" type="Node3D" parent="Physics"]
+
+[node name="Beer" type="Node3D" parent="Physics"]
+
+[node name="PhysicsBeer" parent="Physics/Beer" instance=ExtResource("18_3uiso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Node3D2" type="Node3D" parent="."]
 
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro2" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro3" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro4" method="_turn_on_off"]
+[connection signal="interact" from="Backstage/Interactable" to="Stage/Truss/CSGCombiner3D/Lights" method="_turn_on_off_lights"]

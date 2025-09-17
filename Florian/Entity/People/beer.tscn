@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ovrmixk51bsv"]
+[gd_scene load_steps=9 format=3 uid="uid://d3ynlus2dwtle"]
 
 [ext_resource type="Texture2D" uid="uid://bf4mdirph5vwa" path="res://Amanda/Sprite assets/beer.png" id="1_4cb43"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_1b8ry"]
@@ -47,11 +47,15 @@ animations = [{
 }]
 
 [node name="beer" type="AnimatedSprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.7, 0)
+pixel_size = 0.1
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_8do5l")
+autoplay = "default"
+frame_progress = 0.539534
 
 [node name="PointThing" parent="." instance=ExtResource("2_1b8ry")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-points_name = "Guitar"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1, 0)
+points_name = "Beer"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ow35tpunk744"]
+
+[ext_resource type="PackedScene" uid="uid://d3ynlus2dwtle" path="res://Florian/Entity/People/beer.tscn" id="1_aypp7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aypp7"]
+height = 1.125
+
+[node name="PhysicsBeer" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+
+[node name="beer" parent="." instance=ExtResource("1_aypp7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0875, 0)
+shape = SubResource("CylinderShape3D_aypp7")

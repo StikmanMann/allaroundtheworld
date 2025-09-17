@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://trvl3oxmfnpb"]
+[gd_scene load_steps=11 format=3 uid="uid://dk05y5r50lmm2"]
 
 [ext_resource type="Texture2D" uid="uid://b6x0516k2r07" path="res://Amanda/Sprite assets/dudes_2.png" id="1_85p31"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_cauvc"]

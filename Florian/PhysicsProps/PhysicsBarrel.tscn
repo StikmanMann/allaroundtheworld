@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctcspqlxrw22q"]
+
+[ext_resource type="PackedScene" uid="uid://djm4egh3lh3nj" path="res://Florian/Props/barrel_2.tscn" id="1_cseio"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_4hgdl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4hgdl"]
+height = 1.44609
+
+[node name="PhysicsBarrel" type="RigidBody3D"]
+
+[node name="barrel2" parent="." instance=ExtResource("1_cseio")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0121093, 0)
+shape = SubResource("CylinderShape3D_4hgdl")
+
+[node name="PointThing" parent="." instance=ExtResource("2_4hgdl")]
+points_worth = 5
+points_name = "Barrel"

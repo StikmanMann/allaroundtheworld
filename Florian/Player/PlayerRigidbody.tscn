@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://crrco762ow56c"]
+[gd_scene load_steps=7 format=3 uid="uid://crrco762ow56c"]
 
 [ext_resource type="Script" uid="uid://c35h32dniya44" path="res://Florian/Player/playerRigidbody.gd" id="1_7u3v3"]
 [ext_resource type="PackedScene" uid="uid://4hac7s0wvoye" path="res://Florian/Player/cool_camera.tscn" id="2_leq5j"]
+[ext_resource type="PackedScene" uid="uid://nkeb217f5ont" path="res://Florian/Player/pickup.tscn" id="3_ir482"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jbuyh"]
 friction = 0.0
@@ -41,6 +42,9 @@ debug_shape_thickness = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 player = NodePath("../../..")
 
+[node name="Pickup" parent="BoundingBox/RotationHelper" instance=ExtResource("3_ir482")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
 [node name="ThirdPerson" type="Node3D" parent="BoundingBox"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.94907, 3)
 
@@ -48,6 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="FloorChecks" type="Node3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
 [node name="Diagonals" type="Node3D" parent="BoundingBox/FloorChecks"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)

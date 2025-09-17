@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bab0m4cvoiouv"]
+
+[ext_resource type="PackedScene" uid="uid://cbva1dnqoaopn" path="res://Nikita/level_popup.tscn" id="1_0h1bi"]
+[ext_resource type="Script" uid="uid://1dr3112amj64" path="res://Nikita/3d_popup.gd" id="1_utlwn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_utlwn"]
+size = Vector2(0.6, 0.4)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pn6qm"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0c6d"]
+resource_local_to_scene = true
+no_depth_test = true
+shading_mode = 0
+disable_ambient_light = true
+albedo_texture = SubResource("ViewportTexture_pn6qm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pj2e3"]
+size = Vector3(0.605225, 0.401367, 0.109375)
+
+[node name="3DPopup" type="Node3D"]
+script = ExtResource("1_utlwn")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+gui_embed_subwindows = true
+size = Vector2i(600, 400)
+render_target_update_mode = 4
+
+[node name="LevelPopup" parent="SubViewport" instance=ExtResource("1_0h1bi")]
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.8638, 0.822758, -0.25, 0, 11.8638, 0.258819, 3.17889, -3.07057, 0.933013, 0, 0, 0)
+mesh = SubResource("QuadMesh_utlwn")
+surface_material_override/0 = SubResource("StandardMaterial3D_l0c6d")
+
+[node name="Area3D" type="Area3D" parent="Quad"]
+collision_mask = 2
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
+shape = SubResource("BoxShape3D_pj2e3")

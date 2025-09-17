@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://tvwwstaorixw"]
+
+[ext_resource type="Script" uid="uid://co77n1eq661oo" path="res://Nikita/scripts/camera_hub.gd" id="1_1mhol"]
+
+[node name="CameraHub" type="Node3D"]
+script = ExtResource("1_1mhol")
+
+[node name="XRotation" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="XRotation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1rip77vefx3i"]
+[gd_scene load_steps=23 format=3 uid="uid://d1rip77vefx3i"]
 
 [ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_xskkc"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_noarx"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dxkw8rhvyjfjg" path="res://Florian/Entity/People/guy_drinking.tscn" id="9_v1cbn"]
 [ext_resource type="PackedScene" uid="uid://dj13enetumsfm" path="res://Florian/Entity/People/waitress.tscn" id="10_fe45m"]
 [ext_resource type="PackedScene" uid="uid://dvrnfjtmupucv" path="res://Florian/Props/table.tscn" id="11_n7ovt"]
-[ext_resource type="Script" uid="uid://i4eiinlrt76e" path="res://Florian/sky_rotation.gd" id="11_onea6"]
+[ext_resource type="Script" path="res://Florian/sky_rotation.gd" id="11_onea6"]
+[ext_resource type="PackedScene" uid="uid://m3sk1ustdixv" path="res://Florian/Props/tent.tscn" id="12_jfgxm"]
+[ext_resource type="PackedScene" uid="uid://cw8yrha1l16p0" path="res://Florian/Props/barrel_2.tscn" id="13_pqth1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onea6"]
 albedo_texture = ExtResource("1_xskkc")
@@ -100,7 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 curve = SubResource("Curve3D_ylvgl")
 
 [node name="Waitress" parent="AI/Path3D" instance=ExtResource("5_onea6")]
-transform = Transform3D(0.0520826, -0.0241412, -0.998349, 9.31319e-10, 0.999704, -0.0241741, 0.998639, 0.00125905, 0.0520674, 2, 0, -28)
+transform = Transform3D(0.0520825, -0.0241412, -0.998348, 9.31318e-10, 0.999704, -0.024174, 0.998638, 0.00125905, 0.0520674, 2, 0, -28)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="AI"]
 transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -15, 0, 0)
@@ -152,4 +154,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.9, 0)
 
 [node name="guy_drinking2" parent="." instance=ExtResource("9_v1cbn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.1, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.802609, -3)
+
+[node name="merchant_tent3" parent="." instance=ExtResource("12_jfgxm")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -13.0086, -3.66255, -26.4216)
+
+[node name="barrel2" parent="." instance=ExtResource("13_pqth1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.15821, 0.281362, -6.50229)

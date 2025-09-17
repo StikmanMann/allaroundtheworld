@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://trvl3oxmfnpb"]
+
+[ext_resource type="Texture2D" uid="uid://b6x0516k2r07" path="res://Amanda/Sprite assets/dudes_2.png" id="1_85p31"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_cauvc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qabyh"]
+atlas = ExtResource("1_85p31")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j304"]
+atlas = ExtResource("1_85p31")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l8ji"]
+atlas = ExtResource("1_85p31")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgtc3"]
+atlas = ExtResource("1_85p31")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tffav"]
+atlas = ExtResource("1_85p31")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gce0"]
+atlas = ExtResource("1_85p31")
+region = Rect2(50, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ux7a"]
+atlas = ExtResource("1_85p31")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54bm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qabyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j304")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l8ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgtc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tffav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gce0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ux7a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="guys_2" type="AnimatedSprite3D"]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_54bm0")
+
+[node name="PointThing2" parent="." instance=ExtResource("2_cauvc")]
+points_name = "Guys"

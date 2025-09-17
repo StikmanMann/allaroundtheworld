@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfq21ks4r8gma"]
+
+[ext_resource type="Texture2D" uid="uid://bwdlms684oaxg" path="res://Amanda/Sprite assets/accor.png" id="1_gqqs6"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_rc5w7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bglsn"]
+atlas = ExtResource("1_gqqs6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8gxc"]
+atlas = ExtResource("1_gqqs6")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lltjm"]
+atlas = ExtResource("1_gqqs6")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3qn4"]
+atlas = ExtResource("1_gqqs6")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcjbd"]
+atlas = ExtResource("1_gqqs6")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80p6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bglsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8gxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lltjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3qn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcjbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_80p6a")
+
+[node name="PointThing" parent="." instance=ExtResource("2_rc5w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+points_name = "Guitar"

@@ -14,12 +14,12 @@ sky_material = SubResource("PanoramaSkyMaterial_ur8lc")
 background_mode = 2
 sky = SubResource("Sky_fkqbs")
 
-[node name="Node3D" type="Node3D"]
+[node name="Hub" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ur8lc")
 
-[node name="Earth_Final2" parent="." instance=ExtResource("1_248vy")]
+[node name="Earth" parent="." instance=ExtResource("1_248vy")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="CameraHub" parent="." instance=ExtResource("3_ur8lc")]

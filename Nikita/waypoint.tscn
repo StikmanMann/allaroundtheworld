@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccjwh4alvryho"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxhm1t06r3k56" path="res://Nikita/source/waypoint.obj" id="1_77yrm"]
+[ext_resource type="Script" uid="uid://y2vv2fxj5ils" path="res://Nikita/scripts/waypoint.gd" id="1_iiqp4"]
+[ext_resource type="Texture2D" uid="uid://c668unnp6n3xr" path="res://Nikita/textures/camera_image.png" id="2_iiqp4"]
+[ext_resource type="PackedScene" uid="uid://bab0m4cvoiouv" path="res://Nikita/3d_popup.tscn" id="4_3sm4y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77yrm"]
+depth_draw_mode = 2
+shading_mode = 0
+disable_ambient_light = true
+albedo_color = Color(1, 0.0705882, 0, 1)
+disable_receive_shadows = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iiqp4"]
+
+[node name="Waypoint" type="Node3D"]
+script = ExtResource("1_iiqp4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_77yrm")
+cast_shadow = 0
+mesh = ExtResource("1_77yrm")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.755125, -1.49012e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_iiqp4")
+
+[node name="CameraIcon" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 1, -0.05)
+billboard = 1
+texture = ExtResource("2_iiqp4")
+
+[node name="Popup" parent="." instance=ExtResource("4_3sm4y")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.28591, 0.944037, 2.87264e-07)
+
+[connection signal="input_event" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_input_event"]

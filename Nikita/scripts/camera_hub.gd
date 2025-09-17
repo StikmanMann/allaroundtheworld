@@ -1,7 +1,7 @@
 extends Node3D
 
 var rotation_speed = PI/2
-var min_zoom = 1.3
+var min_zoom = 1.5
 var max_zoom = 5.0
 var zoom_speed = 0.2
 
@@ -9,15 +9,16 @@ var zoom = 2.0
 var mouse_grab_sensitivity = 0.006
 var grabbed : bool = false
 var velocity_y = 0.0
-var dampening_y = 0.3
+var dampening_y = 0.4
 var stop_threashold_y = 0.5
 var velocity_x = 0.0
-var dampening_x = 0.1
+var dampening_x = 0.2
 var stop_threashold_x = 0.3
 
 func _process(delta: float) -> void:
 	$XRotation.rotation.x = clamp($XRotation.rotation.x, -1.3, 1.3)
 	scale = lerp(scale, Vector3.ONE * zoom, zoom_speed)
+	# TODO: reset the velocity when mouse doesn't move for more than 1 second
 	velocity_y = clamp(velocity_y, -100.0, 100.0)
 	velocity_x = clamp(velocity_x, -10.0, 10.0)
 	if !grabbed:

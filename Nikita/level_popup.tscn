@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbva1dnqoaopn"]
+
+[ext_resource type="Script" uid="uid://c1rdbsbip2wvj" path="res://Nikita/scripts/level_popup.gd" id="1_3awpt"]
+[ext_resource type="Texture2D" uid="uid://otyci5h617qa" path="res://Nikita/source/playbutton.png" id="1_ay7gq"]
+[ext_resource type="Texture2D" uid="uid://hk701pejgl" path="res://Nikita/textures/popup.png" id="1_pk11s"]
+
+[node name="LevelPopup" type="Node2D"]
+script = ExtResource("1_3awpt")
+
+[node name="Name" type="Label" parent="."]
+offset_left = 50.0
+offset_right = 550.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 48
+text = "Place name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 550.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 24
+text = "Objective:
+"
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 350.0
+icon = ExtResource("1_ay7gq")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(300, 200)
+texture = ExtResource("1_pk11s")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

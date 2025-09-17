@@ -1,9 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://k3ij7wrtwpms"]
+[gd_scene load_steps=6 format=3 uid="uid://k3ij7wrtwpms"]
 
 [ext_resource type="PackedScene" uid="uid://olc70hg5v5ou" path="res://Amanda/furni/table0.blend" id="1_xylfr"]
+[ext_resource type="Texture2D" uid="uid://cd1v04y3nf1dv" path="res://Amanda/furni/Images/table_diffuse.jpg" id="2_kmspu"]
+[ext_resource type="Texture2D" uid="uid://ibe5gkf5p4s6" path="res://Amanda/furni/Images/table_bump.jpg" id="3_qvbmv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvbmv"]
+albedo_texture = ExtResource("2_kmspu")
+roughness_texture = ExtResource("3_qvbmv")
+roughness_texture_channel = 3
+normal_enabled = true
+normal_texture = ExtResource("3_qvbmv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xylfr"]
+size = Vector3(1, 1, 2.2)
 
 [node name="table0" instance=ExtResource("1_xylfr")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Point" parent="." index="0"]
 visible = false
+
+[node name="Table" parent="." index="1"]
+transform = Transform3D(-2.62268e-08, -0.6, 2.62268e-08, 0, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_qvbmv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -2.98023e-08)
+shape = SubResource("BoxShape3D_xylfr")

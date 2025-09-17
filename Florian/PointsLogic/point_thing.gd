@@ -12,17 +12,15 @@ func _ready() -> void:
 
 func picture_taken() -> bool:
 	var in_picture = on_screen.is_on_screen()
-	print(in_picture)
-	if in_picture:
-		show_red_cicle()
-	else:
-		hide_red_circle()
+	hide_red_circle()
+	#print(in_picture)
+
 	return in_picture
 	
 func show_red_cicle():
-	print("Showing red circle")
+	#print("Showing red circle")
 	red_circle.show()
 
 func hide_red_circle():
-	print("Hiding red circle")
+	#print("Hiding red circle")
 	red_circle.hide()

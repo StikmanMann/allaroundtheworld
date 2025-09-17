@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://by5cq6m32hbor"]
+[gd_scene load_steps=18 format=3 uid="uid://by5cq6m32hbor"]
 
 [ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_6v0xc"]
+[ext_resource type="Texture2D" uid="uid://cd1v04y3nf1dv" path="res://Amanda/furni/Images/table_diffuse.jpg" id="1_tre0f"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_82wr0"]
-[ext_resource type="PackedScene" uid="uid://dvrnfjtmupucv" path="res://Florian/Props/table.tscn" id="3_tw6g5"]
 [ext_resource type="PackedScene" uid="uid://bobfhgsydmmr2" path="res://Florian/pyro.tscn" id="4_h8052"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="5_ygtpi"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="6_miqpv"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://c5552lenumx2j" path="res://Florian/Entity/People/saxophone.tscn" id="7_miqpv"]
 [ext_resource type="PackedScene" uid="uid://bybsn53hd1mge" path="res://Florian/Entity/People/guys.tscn" id="9_3box6"]
 [ext_resource type="PackedScene" uid="uid://k3ij7wrtwpms" path="res://Florian/table_0.tscn" id="10_ubr03"]
+[ext_resource type="PackedScene" uid="uid://lrf6ltd1wwg1" path="res://Florian/Entity/People/waitress_path.tscn" id="12_g561u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g561u"]
+albedo_texture = ExtResource("1_tre0f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eral8"]
 albedo_texture = ExtResource("1_6v0xc")
@@ -21,9 +25,20 @@ size = Vector2(500, 500)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tw6g5"]
 
+[sub_resource type="Curve3D" id="Curve3D_4etk5"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 12),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tre0f"]
+
 [node name="Oktoberfest" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_g561u")
 mesh = SubResource("PlaneMesh_82wr0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -34,9 +49,6 @@ shape = SubResource("WorldBoundaryShape3D_tw6g5")
 
 [node name="PlayerRigidbody" parent="." instance=ExtResource("2_82wr0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
-
-[node name="Table2" parent="." instance=ExtResource("3_tw6g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1)
 
 [node name="Stage" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
@@ -133,8 +145,92 @@ shadow_enabled = true
 
 [node name="Backstage" type="Node3D" parent="."]
 
-[node name="table0" parent="." instance=ExtResource("10_ubr03")]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 3)
+[node name="Tables" type="Node3D" parent="."]
+
+[node name="table0" parent="Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="Tables/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="Tables/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="Tables/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="Tables/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="Tables/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="Tables/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="Tables/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="Tables/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="Tables/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="Tables/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="Tables/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="Tables/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="Tables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="Tables/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 6)
+use_collision = true
+size = Vector3(1, 7, 13)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="Decal" type="Decal" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -1)
+size = Vector3(2, 4, 6)
+texture_albedo = ExtResource("1_6v0xc")
 
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro2" method="_turn_on_off"]

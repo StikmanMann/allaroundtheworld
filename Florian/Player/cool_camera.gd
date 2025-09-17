@@ -23,14 +23,35 @@ func _calculate_points():
 	_calculate_picture_spots()
 	label.text = "%s\nTotal points: %d x %.2f = %.2f" % [points_string, total_points, total_points_multipliers, total_points * total_points_multipliers]
 
+var acceptable_length = 0.1
+
 func _calculate_picture_objects():
 	for takeable in PictureTakeablesArray.picture_takables:
-		print("Checking takeable")
+		#print("Checking takeable")
 		if takeable.picture_taken():
+			var raycast = RayCast3D.new()
+			raycast.top_level = true
+			add_child(raycast)
+			raycast.global_position = get_viewport().get_camera_3d().global_position
+			
+			raycast.target_position = takeable.global_position - self.global_position
+			raycast.force_raycast_update()
+			raycast.collide_with_bodies = true
+			raycast.debug_shape_thickness = 2
+			if raycast.is_colliding():
+				print("raycast hit")
+				var raycast_hit = raycast.get_collision_point()
+				print(str((raycast_hit - self.global_position).length()))
+				if (raycast_hit - self.global_position).length() > acceptable_length:
+					print("Not in range!")
+					raycast.queue_free()
+					continue
+			raycast.queue_free()
 			
 			points_string += "{name} {points}\n".format({"name" : takeable.points_name, "points": str(takeable.points_worth)})
 			total_points += takeable.points_worth
 			total_points_multipliers *= takeable.points_multiplier
+			takeable.show_red_cicle()
 
 func _calculate_picture_spots():
 	for spot in PictureTakeablesArray.picture_spots:

@@ -1,5 +1,9 @@
 extends Node3D
 
+@export var scene_name : String
+@export_multiline var scene_description : String
+@export var switch_to : PackedScene
+
 var to_earth
 var toggle_popup : bool = false
 
@@ -8,7 +12,11 @@ func _ready() -> void:
 	var cam = get_viewport().get_camera_3d()
 	to_earth = (get_parent().global_position - global_position).normalized()
 	look_at(cam.global_position, Vector3.UP)
-
+	$Popup/SubViewport/LevelPopup/Name.text = scene_name
+	$Popup/SubViewport/LevelPopup/Description.text = scene_description
+	var child = $Popup/SubViewport/LevelPopup
+	child.enter_level.connect(_on_play_button_pressed)
+	
 func _process(delta):
 	var cam = get_viewport().get_camera_3d()
 	var to_camera = (cam.global_position - global_position).normalized()
@@ -58,3 +66,6 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 	if event is InputEventMouseButton and event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:
 		toggle_popup = !toggle_popup
 		get_node("Popup").visible = toggle_popup
+
+func _on_play_button_pressed() -> void:
+	get_tree().change_scene_to_packed(switch_to)

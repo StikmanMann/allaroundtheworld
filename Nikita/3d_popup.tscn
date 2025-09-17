@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bab0m4cvoiouv"]
 
-[ext_resource type="PackedScene" uid="uid://cbva1dnqoaopn" path="res://Nikita/level_popup.tscn" id="1_0h1bi"]
-[ext_resource type="Script" uid="uid://1dr3112amj64" path="res://Nikita/3d_popup.gd" id="1_utlwn"]
+[ext_resource type="PackedScene" uid="uid://oxtnk076gboh" path="res://Nikita/level_popup.tscn" id="1_0h1bi"]
+[ext_resource type="Script" uid="uid://1dr3112amj64" path="res://Nikita/scripts/3d_popup.gd" id="1_utlwn"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_utlwn"]
 size = Vector2(0.6, 0.4)

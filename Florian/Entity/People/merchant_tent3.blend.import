@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bywn575nv8tm8"
-path="res://.godot/imported/merchant_tent3.blend-6089b79591e5b9fc9fb6643f66087c87.scn"
+valid=false
 
 [deps]
 
 source_file="res://Florian/Entity/People/merchant_tent3.blend"
-dest_files=["res://.godot/imported/merchant_tent3.blend-6089b79591e5b9fc9fb6643f66087c87.scn"]
 
 [params]
 

@@ -13,13 +13,11 @@ var last_event_time := -1.0
 @onready var node_quad: MeshInstance3D = $Quad
 @onready var node_area: Area3D = $Quad/Area3D
 
-#var original_scale
-
 func _ready() -> void:
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
-	#original_scale = $Quad.scale
+	
 	# If the material is NOT set to use billboard settings, then avoid running billboard specific code
 	#if node_quad.get_surface_override_material(0).billboard_mode == BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED:
 		#set_process(false)

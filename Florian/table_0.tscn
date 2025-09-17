@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://k3ij7wrtwpms"]
+
+[ext_resource type="PackedScene" uid="uid://olc70hg5v5ou" path="res://Amanda/furni/table0.blend" id="1_xylfr"]
+
+[node name="table0" instance=ExtResource("1_xylfr")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Point" parent="." index="0"]
+visible = false

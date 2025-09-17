@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bobfhgsydmmr2"]
+
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="1_o4o5a"]
+[ext_resource type="Script" uid="uid://dravmby4n0dwd" path="res://Florian/pyro.gd" id="1_qbqit"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ydarf"]
+direction = Vector3(0, 10, 0)
+spread = 20.0
+initial_velocity_min = 15.53
+initial_velocity_max = 15.53
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4o5a"]
+emission_enabled = true
+emission = Color(0.97254, 0.877108, 0.233288, 1)
+emission_energy_multiplier = 9.8
+disable_receive_shadows = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_qbqit"]
+material = SubResource("StandardMaterial3D_o4o5a")
+size = 0.1
+sections = 2
+
+[node name="Pyro" type="Node3D"]
+script = ExtResource("1_qbqit")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_ydarf")
+draw_pass_1 = SubResource("RibbonTrailMesh_qbqit")
+
+[node name="PointThing" parent="." instance=ExtResource("1_o4o5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+points_name = "Pyro"
+points_multiplier = 1.2
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(0.4, 1, 0.4)

@@ -4,6 +4,7 @@ extends RigidBody3D
 @onready var camera = $BoundingBox/RotationHelper/CoolCamera
 @onready var rotation_helper = $BoundingBox/RotationHelper
 @onready var bounding_box = $BoundingBox
+@onready var interact_ray: RayCast3D = $BoundingBox/RotationHelper/Interact/InteractRay
 
 signal take_picture
 
@@ -31,9 +32,21 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pass
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	
+func _interact() -> void:
+	if interact_ray.is_colliding():
+		var obj = interact_ray.get_collider()
+		print(obj)
+		if obj is Interactable:
+			#print("Jetzt  ist es ezit")
+			obj.interact.emit()
 
 func _input(event):
+	if event.is_action_pressed("interact"):
+		_interact()
+
+
+	
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE && event.is_pressed():
 			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

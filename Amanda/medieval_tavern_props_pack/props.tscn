@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dydt8t6an07tt"]
 
-[ext_resource type="PackedScene" uid="uid://caeps7026h7y7" path="res://Amanda/medieval_tavern_props_pack/medieval_tavern_props_pack.blend" id="1_mma1v"]
+[ext_resource type="PackedScene" uid="uid://2b0d5l2nlgf3" path="res://Amanda/medieval_tavern_props_pack/medieval_tavern_props_pack.blend" id="1_mma1v"]
 
 [node name="props" instance=ExtResource("1_mma1v")]
 

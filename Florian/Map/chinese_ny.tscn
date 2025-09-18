@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://b2rihishxk0on"]
+[gd_scene load_steps=64 format=3 uid="uid://b2rihishxk0on"]
 
 [ext_resource type="PackedScene" uid="uid://4qygsglmdow6" path="res://Amanda/temple_gate/source/01door.FBX.fbx" id="1_dr64d"]
 [ext_resource type="Texture2D" uid="uid://bnrri5m5k1c1a" path="res://Amanda/grass.png" id="2_r0dy2"]
@@ -12,14 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://by4qtiie7iop" path="res://Amanda/SandyDry_S.jpg" id="9_8kkm8"]
 [ext_resource type="Texture2D" uid="uid://c2teei5qadpf5" path="res://Amanda/Sprite assets/girl_c.png" id="10_64lnl"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="10_qqwfx"]
-[ext_resource type="Texture2D" uid="uid://bphnmyd2oiua0" path="res://Amanda/skybox/satara_night_no_lamps_2k.exr" id="13_3f12g"]
 [ext_resource type="PackedScene" uid="uid://osrimuaocr1t" path="res://Amanda/tree/scene.gltf" id="13_cx38t"]
 [ext_resource type="Texture2D" uid="uid://cb1dwblmnwxcs" path="res://Amanda/Sprite assets/Untitled_Artwork-1 17.png" id="14_s4atm"]
 [ext_resource type="Texture2D" uid="uid://ciiwxhviiq2vy" path="res://Florian/Props/clothgrown.jpg" id="15_bowqk"]
 [ext_resource type="Texture2D" uid="uid://dvat0w2k6bb78" path="res://Amanda/Sprite assets/Untitled_Artwork-1 18.png" id="15_hp67e"]
 [ext_resource type="Script" uid="uid://bgolfgrq66diw" path="res://npc_path_follower.gd" id="17_3f12g"]
 [ext_resource type="PackedScene" uid="uid://dggx2w2c8xojc" path="res://Florian/PhysicsProps/firework.tscn" id="19_qqao8"]
-[ext_resource type="AudioStream" uid="uid://yuv8dxd17p6s" path="res://Florian/Audio/chineseAmbientMusicGame.ogg" id="20_72n5s"]
+[ext_resource type="AudioStream" uid="uid://dqomxq6g33eod" path="res://Florian/Audio/chineseAmbientMusicGame.ogg" id="20_72n5s"]
 [ext_resource type="Script" uid="uid://b7m4mddm1165v" path="res://Florian/Map/firework_spawn_locations.gd" id="21_yd64k"]
 [ext_resource type="PackedScene" uid="uid://iky4i2bjknty" path="res://Florian/Props/gong.tscn" id="22_ppss2"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="23_4rmvb"]
@@ -200,7 +199,6 @@ animations = [{
 }]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3f12g"]
-panorama = ExtResource("13_3f12g")
 
 [sub_resource type="Sky" id="Sky_qqao8"]
 sky_material = SubResource("PanoramaSkyMaterial_3f12g")

@@ -53,7 +53,7 @@ func _calculate_picture_objects():
 			
 			var points = takeable.points_worth
 			if duplicates.get(takeable.points_name):
-				points = int(points * 0.5)
+				points = int(points * 0.2)
 				points_string += "Duplicate: {name} {points}\n".format(
 					{"name" : takeable.points_name, "points": points}
 					)

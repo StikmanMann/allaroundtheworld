@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://v86q0i25q2dj"]
+
+[ext_resource type="Script" uid="uid://g0sldpbn2yiu" path="res://Florian/PhysicsProps/drunk_follow.gd" id="1_m5yqb"]
+[ext_resource type="Texture2D" uid="uid://dkt1ynydnm1k5" path="res://Amanda/Sprite assets/guy_drink-2.png" id="2_1cami"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="3_1cami"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fwpe3"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ekj"]
+atlas = ExtResource("2_1cami")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wlxe"]
+atlas = ExtResource("2_1cami")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp4i5"]
+atlas = ExtResource("2_1cami")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsn4b"]
+atlas = ExtResource("2_1cami")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq3k7"]
+atlas = ExtResource("2_1cami")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjsfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ekj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wlxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp4i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsn4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq3k7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1cami"]
+height = 2.4
+
+[node name="DrunkFollow" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 30.0
+script = ExtResource("1_m5yqb")
+speed = 1
+
+[node name="SeeArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SeeArea"]
+shape = SubResource("CylinderShape3D_fwpe3")
+
+[node name="guy_drinking" type="AnimatedSprite3D" parent="."]
+modulate = Color(1, 0.972549, 0, 1)
+pixel_size = 0.07
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_vjsfa")
+autoplay = "default"
+frame_progress = 0.372896
+
+[node name="PointThing2" parent="guy_drinking" instance=ExtResource("3_1cami")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+points_worth = 100
+points_name = "Golden Drunk Guy"
+points_multiplier = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("CylinderShape3D_1cami")

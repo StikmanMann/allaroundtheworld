@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://by5cq6m32hbor"]
+[gd_scene load_steps=39 format=3 uid="uid://by5cq6m32hbor"]
 
 [ext_resource type="Texture2D" uid="uid://cd1v04y3nf1dv" path="res://Amanda/furni/Images/table_diffuse.jpg" id="1_tre0f"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_82wr0"]
@@ -16,11 +16,19 @@
 [ext_resource type="Texture2D" uid="uid://cx783frd814e6" path="res://Florian/Decals/power.png" id="11_bsfgy"]
 [ext_resource type="PackedScene" uid="uid://lrf6ltd1wwg1" path="res://Florian/Entity/People/waitress_path.tscn" id="12_g561u"]
 [ext_resource type="PackedScene" uid="uid://ctcspqlxrw22q" path="res://Florian/PhysicsProps/PhysicsBarrel.tscn" id="13_ijkca"]
+[ext_resource type="Texture2D" uid="uid://b668hlnork7jt" path="res://Florian/Textures/bush.jpg" id="14_70e5e"]
 [ext_resource type="PackedScene" uid="uid://ow35tpunk744" path="res://Florian/PhysicsProps/physics_beer.tscn" id="18_3uiso"]
+[ext_resource type="Texture2D" uid="uid://bla485tbvu3cs" path="res://Amanda/skybox/Skydome_0.png" id="19_20xaa"]
 [ext_resource type="PackedScene" uid="uid://bxruw32nq7qfw" path="res://Florian/Props/beer_stand.tscn" id="19_d5eeg"]
+[ext_resource type="PackedScene" uid="uid://v86q0i25q2dj" path="res://Florian/PhysicsProps/DrunkFollow.tscn" id="20_20xaa"]
+[ext_resource type="AudioStream" uid="uid://bf4mxj37o7bh2" path="res://Florian/Audio/oktoberfestambience.mp3.ogg" id="21_mmnkp"]
+[ext_resource type="PackedScene" uid="uid://b85ujwx0p8gvn" path="res://Florian/Props/door.tscn" id="22_bv6bj"]
+[ext_resource type="PackedScene" uid="uid://c4fw8rjct7vms" path="res://Florian/Entity/People/accor.tscn" id="23_0a0yf"]
+[ext_resource type="Script" uid="uid://btok1rqmtms4o" path="res://Florian/Map/accor_animation.gd" id="24_ho8ja"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uiso"]
 albedo_texture = ExtResource("1_tre0f")
+emission = Color(0.823529, 0, 0, 1)
 uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_82wr0"]
@@ -35,6 +43,16 @@ size = Vector3(33, 7, 29)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4etk5"]
 albedo_color = Color(0.51859, 0.210826, 0.0712605, 1)
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mmnkp"]
+panorama = ExtResource("19_20xaa")
+
+[sub_resource type="Sky" id="Sky_bv6bj"]
+sky_material = SubResource("PanoramaSkyMaterial_mmnkp")
+
+[sub_resource type="Environment" id="Environment_d5eeg"]
+background_mode = 2
+sky = SubResource("Sky_bv6bj")
+
 [sub_resource type="Curve3D" id="Curve3D_4etk5"]
 closed = true
 _data = {
@@ -43,11 +61,94 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tre0f"]
+[sub_resource type="Animation" id="Animation_0a0yf"]
+resource_name = "accordGoesOnStage"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5, 6.02, 6.66667, 7.02, 7.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-11, 1, -37), Vector3(-11, 1, -28), Vector3(-2, 1, -13), Vector3(-2, 1, -13), Vector3(-1, 3, -10), Vector3(-1, 3, -10), Vector3(0, 2.3, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.16, 6.66, 6.87, 7.03),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0.523599, 0), Vector3(0, 0.523599, 0), Vector3(0, 3.66519, 3.14159), Vector3(0, 0.523599, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:billboard")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
 
-[sub_resource type="Environment" id="Environment_d5eeg"]
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 16.0
+[sub_resource type="Animation" id="Animation_ho8ja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-11, 1, -37)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:billboard")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70e5e"]
+_data = {
+&"RESET": SubResource("Animation_ho8ja"),
+&"accordGoesOnStage": SubResource("Animation_0a0yf")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tre0f"]
+albedo_texture = ExtResource("14_70e5e")
+uv1_scale = Vector3(20, 2, 10)
 
 [node name="Oktoberfest" type="Node3D"]
 
@@ -189,6 +290,11 @@ transform = Transform3D(1.49012e-07, 0, -1, 0, 1, 0, 1, 0, 1.49012e-07, -1.43051
 [node name="guys8" parent="Stage/DancingPeople" instance=ExtResource("9_3box6")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.24264, 0.9, -4.24264)
 
+[node name="Oktoberfestambience_mp3" type="AudioStreamPlayer3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+stream = ExtResource("21_mmnkp")
+autoplay = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 shadow_enabled = true
@@ -235,153 +341,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 2.8, -6)
 [node name="Interactable" parent="Backstage" instance=ExtResource("5_ygtpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -11)
 
-[node name="Tables" type="Node3D" parent="."]
-
-[node name="merchant_tent3" parent="Tables" instance=ExtResource("11_4etk5")]
-transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent3"]
-transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
-
-[node name="merchant_tent4" parent="Tables" instance=ExtResource("11_4etk5")]
-transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent4"]
-transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
-
-[node name="merchant_tent5" parent="Tables" instance=ExtResource("11_4etk5")]
-transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent5"]
-transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
-
-[node name="merchant_tent6" parent="Tables" instance=ExtResource("11_4etk5")]
-transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Tables/merchant_tent6"]
-transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
-
-[node name="table0" parent="Tables" instance=ExtResource("10_ubr03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
-
-[node name="guys2" parent="Tables/table0" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
-billboard = 0
-
-[node name="guys3" parent="Tables/table0" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
-billboard = 0
-
-[node name="table1" parent="Tables" instance=ExtResource("10_ubr03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
-
-[node name="guys2" parent="Tables/table1" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
-billboard = 0
-
-[node name="guys3" parent="Tables/table1" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
-billboard = 0
-
-[node name="table2" parent="Tables" instance=ExtResource("10_ubr03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
-
-[node name="guys2" parent="Tables/table2" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
-billboard = 0
-
-[node name="guys3" parent="Tables/table2" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
-billboard = 0
-
-[node name="table3" parent="Tables" instance=ExtResource("10_ubr03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
-
-[node name="guys2" parent="Tables/table3" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
-billboard = 0
-
-[node name="guys3" parent="Tables/table3" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
-billboard = 0
-
-[node name="table4" parent="Tables" instance=ExtResource("10_ubr03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
-
-[node name="guys2" parent="Tables/table4" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
-billboard = 0
-
-[node name="guys3" parent="Tables/table4" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
-billboard = 0
-
-[node name="table5" parent="Tables" instance=ExtResource("10_ubr03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
-
-[node name="guys2" parent="Tables/table5" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
-billboard = 0
-
-[node name="guys3" parent="Tables/table5" instance=ExtResource("9_3box6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
-billboard = 0
-
-[node name="Path3D" type="Path3D" parent="Tables"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
-curve = SubResource("Curve3D_4etk5")
-
-[node name="WaitressPath" parent="Tables/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-path = NodePath("..")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, 17)
-use_collision = true
-size = Vector3(79, 7, 1)
-material = SubResource("StandardMaterial3D_tre0f")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -59)
-use_collision = true
-size = Vector3(79, 7, 1)
-material = SubResource("StandardMaterial3D_tre0f")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50, 3, -21)
-use_collision = true
-size = Vector3(79, 7, 1)
-material = SubResource("StandardMaterial3D_tre0f")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 3, -21)
-use_collision = true
-size = Vector3(79, 7, 1)
-material = SubResource("StandardMaterial3D_tre0f")
-
 [node name="Physics" type="Node3D" parent="."]
 
-[node name="PhysicsBarrel" parent="Physics" instance=ExtResource("13_ijkca")]
+[node name="Beer" type="Node3D" parent="Physics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8)
+
+[node name="GoldenBeer" parent="Physics/Beer" instance=ExtResource("18_3uiso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6.1, 0)
+
+[node name="beer" parent="Physics/Beer/GoldenBeer" index="0"]
+pixel_size = 0.2
+
+[node name="CollisionShape3D" parent="Physics/Beer/GoldenBeer" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.724902, 0)
+
+[node name="BeerPodium" type="Node3D" parent="Physics/Beer"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Physics/Beer/BeerPodium"]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Physics/Beer/BeerPodium/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.4, 0)
+radius = 1.0
+height = 6.8
+
+[node name="Barrels" type="Node3D" parent="Physics/Beer/BeerPodium"]
+
+[node name="PhysicsBarrel" parent="Physics/Beer/BeerPodium/Barrels" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -3)
+
+[node name="PhysicsBarrel2" parent="Physics/Beer/BeerPodium/Barrels" instance=ExtResource("13_ijkca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5)
+
+[node name="Barrels2" type="Node3D" parent="Physics"]
+
+[node name="PhysicsBarrel" parent="Physics/Barrels2" instance=ExtResource("13_ijkca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.751997, -14.7)
 
-[node name="PhysicsBarrel2" parent="Physics" instance=ExtResource("13_ijkca")]
+[node name="PhysicsBarrel2" parent="Physics/Barrels2" instance=ExtResource("13_ijkca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0.751997, -14.7)
 
-[node name="PhysicsBarrel5" parent="Physics" instance=ExtResource("13_ijkca")]
+[node name="PhysicsBarrel5" parent="Physics/Barrels2" instance=ExtResource("13_ijkca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.751997, -14.7)
 
-[node name="PhysicsBarrel3" parent="Physics" instance=ExtResource("13_ijkca")]
+[node name="PhysicsBarrel3" parent="Physics/Barrels2" instance=ExtResource("13_ijkca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 2.252, -14.7)
 
-[node name="PhysicsBarrel4" parent="Physics" instance=ExtResource("13_ijkca")]
+[node name="PhysicsBarrel4" parent="Physics/Barrels2" instance=ExtResource("13_ijkca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.252, -14.7)
-
-[node name="Barrels" type="Node3D" parent="Physics"]
-
-[node name="Beer" type="Node3D" parent="Physics"]
-
-[node name="PhysicsBeer" parent="Physics/Beer" instance=ExtResource("18_3uiso")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Node3D2" type="Node3D" parent="."]
 
@@ -391,8 +398,668 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d5eeg")
 
+[node name="DrunkFollow" parent="." node_paths=PackedStringArray("item_want") instance=ExtResource("20_20xaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, -8)
+item_want = NodePath("../Physics/Beer/GoldenBeer")
+
+[node name="AllTables" type="Node3D" parent="."]
+
+[node name="Tables" type="Node3D" parent="AllTables"]
+
+[node name="merchant_tent3" parent="AllTables/Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="AllTables/Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="AllTables/Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="AllTables/Tables" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="table0" parent="AllTables/Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="AllTables/Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="AllTables/Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="AllTables/Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="AllTables/Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="AllTables/Tables" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="AllTables/Tables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="AllTables/Tables/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="Tables2" type="Node3D" parent="AllTables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28)
+
+[node name="merchant_tent3" parent="AllTables/Tables2" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables2/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="AllTables/Tables2" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables2/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="AllTables/Tables2" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables2/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="AllTables/Tables2" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables2/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="table0" parent="AllTables/Tables2" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables2/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables2/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="AllTables/Tables2" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables2/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables2/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="AllTables/Tables2" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables2/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables2/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="AllTables/Tables2" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables2/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables2/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="AllTables/Tables2" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables2/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables2/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="AllTables/Tables2" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables2/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables2/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="AllTables/Tables2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="AllTables/Tables2/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="Tables3" type="Node3D" parent="AllTables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="merchant_tent3" parent="AllTables/Tables3" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables3/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="AllTables/Tables3" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables3/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="AllTables/Tables3" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables3/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="AllTables/Tables3" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables3/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="table0" parent="AllTables/Tables3" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables3/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables3/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="AllTables/Tables3" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables3/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables3/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="AllTables/Tables3" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables3/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables3/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="AllTables/Tables3" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables3/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables3/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="AllTables/Tables3" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables3/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables3/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="AllTables/Tables3" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables3/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables3/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="AllTables/Tables3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="AllTables/Tables3/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="Tables4" type="Node3D" parent="AllTables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -28)
+
+[node name="merchant_tent3" parent="AllTables/Tables4" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables4/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="AllTables/Tables4" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables4/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="AllTables/Tables4" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables4/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="AllTables/Tables4" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables4/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="table0" parent="AllTables/Tables4" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables4/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables4/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="AllTables/Tables4" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables4/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables4/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="AllTables/Tables4" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables4/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables4/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="AllTables/Tables4" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables4/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables4/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="AllTables/Tables4" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables4/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables4/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="AllTables/Tables4" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables4/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables4/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="AllTables/Tables4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="AllTables/Tables4/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="Tables5" type="Node3D" parent="AllTables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="merchant_tent3" parent="AllTables/Tables5" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables5/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="AllTables/Tables5" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables5/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="AllTables/Tables5" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables5/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="AllTables/Tables5" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables5/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="table0" parent="AllTables/Tables5" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables5/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables5/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="AllTables/Tables5" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables5/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables5/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="AllTables/Tables5" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables5/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables5/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="AllTables/Tables5" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables5/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables5/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="AllTables/Tables5" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables5/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables5/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="AllTables/Tables5" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables5/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables5/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="AllTables/Tables5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="AllTables/Tables5/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="Tables6" type="Node3D" parent="AllTables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -28)
+
+[node name="merchant_tent3" parent="AllTables/Tables6" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables6/merchant_tent3"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent4" parent="AllTables/Tables6" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, 4.965, 0, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables6/merchant_tent4"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent5" parent="AllTables/Tables6" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 1.863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables6/merchant_tent5"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="merchant_tent6" parent="AllTables/Tables6" instance=ExtResource("11_4etk5")]
+transform = Transform3D(2.07, 0, 0, 0, 2.07, 0, 0, 0, 2.07, -0.845, 0.1, 5.796)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AllTables/Tables6/merchant_tent6"]
+transform = Transform3D(0.483092, 0, 0, 0, 0.483092, 0, 0, 0, 0.483092, 0.821256, 1.44928, 1.01449)
+
+[node name="table0" parent="AllTables/Tables6" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables6/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables6/table0" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table1" parent="AllTables/Tables6" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables6/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables6/table1" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table2" parent="AllTables/Tables6" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables6/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables6/table2" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table3" parent="AllTables/Tables6" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="guys2" parent="AllTables/Tables6/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables6/table3" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table4" parent="AllTables/Tables6" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="guys2" parent="AllTables/Tables6/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables6/table4" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="table5" parent="AllTables/Tables6" instance=ExtResource("10_ubr03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="guys2" parent="AllTables/Tables6/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.927208, 0.87, -0.127208)
+billboard = 0
+
+[node name="guys3" parent="AllTables/Tables6/table5" instance=ExtResource("9_3box6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27279, 0.87, -0.127208)
+billboard = 0
+
+[node name="Path3D" type="Path3D" parent="AllTables/Tables6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.2, 0)
+curve = SubResource("Curve3D_4etk5")
+
+[node name="WaitressPath" parent="AllTables/Tables6/Path3D" node_paths=PackedStringArray("path") instance=ExtResource("12_g561u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+path = NodePath("..")
+
+[node name="Accordeon" type="Node3D" parent="."]
+
+[node name="Door" parent="Accordeon" instance=ExtResource("22_bv6bj")]
+transform = Transform3D(3.84, 0, 0, 0, 1.92, 0, 0, 0, 1.92, -13, 0, -31)
+
+[node name="Accordeon" parent="Accordeon" instance=ExtResource("23_0a0yf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -37)
+
+[node name="AccorAnimation" type="AnimationPlayer" parent="Accordeon/Accordeon"]
+libraries = {
+&"": SubResource("AnimationLibrary_70e5e")
+}
+script = ExtResource("24_ho8ja")
+
+[node name="WorldBoundary" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WorldBoundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, 17)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="WorldBoundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -31.5)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WorldBoundary/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900001, 0, 0)
+operation = 2
+size = Vector3(3.8, 7, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="WorldBoundary"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50, 3, -21)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="WorldBoundary"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 3, -21)
+use_collision = true
+size = Vector3(79, 7, 1)
+material = SubResource("StandardMaterial3D_tre0f")
+
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro2" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro3" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro4" method="_turn_on_off"]
 [connection signal="interact" from="Backstage/Interactable" to="Stage/Truss/CSGCombiner3D/Lights" method="_turn_on_off_lights"]
+[connection signal="door_closed" from="Accordeon/Door" to="Accordeon/Accordeon/AccorAnimation" method="_play_animation"]
+[connection signal="door_opened" from="Accordeon/Door" to="Accordeon/Accordeon/AccorAnimation" method="_play_animation"]
+
+[editable path="Physics/Beer/GoldenBeer"]

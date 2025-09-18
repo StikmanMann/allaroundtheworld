@@ -46,12 +46,16 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
+[node name="Accor" type="AnimatedSprite3D"]
+pixel_size = 0.05
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_80p6a")
+autoplay = "default"
 
 [node name="PointThing" parent="." instance=ExtResource("2_rc5w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+points_worth = 50
 points_name = "Accordion"
+points_multiplier = 1.5

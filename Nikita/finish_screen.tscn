@@ -84,5 +84,6 @@ theme_override_constants/outline_size = 2
 text = "Exit
 "
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/Exit" to="." method="_on_exit_pressed"]

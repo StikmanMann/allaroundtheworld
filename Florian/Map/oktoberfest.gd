@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("take_picture"):
+		await PictureTakeablesArray.calcualtion_finished
 		finish()
 	if Input.is_action_just_pressed("pause"):
 		pause_menu()

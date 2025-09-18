@@ -1,22 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://4hac7s0wvoye"]
+[gd_scene load_steps=3 format=3 uid="uid://4hac7s0wvoye"]
 
 [ext_resource type="Script" uid="uid://dff1mtnypemb4" path="res://Florian/Player/cool_camera.gd" id="1_87r7f"]
+[ext_resource type="AudioStream" uid="uid://b87evhnkm1hs" path="res://Florian/Audio/flash-camera.mp3" id="2_xbt26"]
 
 [node name="CoolCamera" type="Node3D"]
 script = ExtResource("1_87r7f")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 559.0
-offset_bottom = 250.0
-text = "Points worth: 0"
+[node name="Flash-camera" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_xbt26")

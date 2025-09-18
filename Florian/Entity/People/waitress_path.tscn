@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://lrf6ltd1wwg1"]
 
-[ext_resource type="Script" uid="uid://bgolfgrq66diw" path="res://npc_path_follower.gd" id="1_fc1lq"]
+[ext_resource type="Script" path="res://npc_path_follower.gd" id="1_fc1lq"]
 [ext_resource type="PackedScene" uid="uid://dj13enetumsfm" path="res://Florian/Entity/People/waitress.tscn" id="2_qxq5o"]
 
 [node name="WaitressPath" type="PathFollow3D"]
 script = ExtResource("1_fc1lq")
-metadata/_custom_type_script = "uid://bgolfgrq66diw"
 
 [node name="waitress" parent="." instance=ExtResource("2_qxq5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4957, 0)

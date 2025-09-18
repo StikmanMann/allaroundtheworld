@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b2rihishxk0on"]
+[gd_scene load_steps=71 format=3 uid="uid://b2rihishxk0on"]
 
 [ext_resource type="PackedScene" uid="uid://4qygsglmdow6" path="res://Amanda/temple_gate/source/01door.FBX.fbx" id="1_dr64d"]
 [ext_resource type="Script" path="res://Florian/Map/chinese_ny.gd" id="1_yx28j"]
@@ -14,17 +14,16 @@
 [ext_resource type="Texture2D" uid="uid://c2teei5qadpf5" path="res://Amanda/Sprite assets/girl_c.png" id="10_64lnl"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="10_qqwfx"]
 [ext_resource type="PackedScene" uid="uid://osrimuaocr1t" path="res://Amanda/tree/scene.gltf" id="13_cx38t"]
-[ext_resource type="Texture2D" uid="uid://cb1dwblmnwxcs" path="res://Amanda/Sprite assets/Untitled_Artwork-1 17.png" id="14_s4atm"]
+[ext_resource type="Texture2D" uid="uid://c0so272ko5xmv" path="res://Amanda/Sprite assets/Untitled_Artwork-1 17.png" id="14_s4atm"]
 [ext_resource type="Texture2D" uid="uid://ciiwxhviiq2vy" path="res://Florian/Props/clothgrown.jpg" id="15_bowqk"]
-[ext_resource type="Texture2D" uid="uid://dvat0w2k6bb78" path="res://Amanda/Sprite assets/Untitled_Artwork-1 18.png" id="15_hp67e"]
-[ext_resource type="Script" uid="uid://bgolfgrq66diw" path="res://npc_path_follower.gd" id="17_3f12g"]
+[ext_resource type="Texture2D" uid="uid://w207q4aq0uoc" path="res://Amanda/Sprite assets/Untitled_Artwork-1 18.png" id="15_hp67e"]
+[ext_resource type="Script" path="res://npc_path_follower.gd" id="17_3f12g"]
 [ext_resource type="PackedScene" uid="uid://dggx2w2c8xojc" path="res://Florian/PhysicsProps/firework.tscn" id="19_qqao8"]
 [ext_resource type="AudioStream" uid="uid://yuv8dxd17p6s" path="res://Florian/Audio/chineseAmbientMusicGame.ogg" id="20_72n5s"]
 [ext_resource type="Script" uid="uid://b7m4mddm1165v" path="res://Florian/Map/firework_spawn_locations.gd" id="21_yd64k"]
 [ext_resource type="PackedScene" uid="uid://iky4i2bjknty" path="res://Florian/Props/gong.tscn" id="22_ppss2"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="23_4rmvb"]
-[ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="24_k5331"]
-[ext_resource type="PackedScene" uid="uid://dl42xs7anteub" path="res://Nikita/finish_screen.tscn" id="25_hi5ja"]
+[ext_resource type="Texture2D" uid="uid://rqu0vn1n5kys" path="res://Amanda/Sprite assets/boy_c.png" id="23_oagmg"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qqwfx"]
 top_radius = 50.0
@@ -272,8 +271,50 @@ animations = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp67e"]
 albedo_texture = ExtResource("15_bowqk")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lno8e"]
+atlas = ExtResource("23_oagmg")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h8l4"]
+atlas = ExtResource("23_oagmg")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtqvj"]
+atlas = ExtResource("23_oagmg")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j66ge"]
+atlas = ExtResource("23_oagmg")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp07m"]
+atlas = ExtResource("23_oagmg")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wg13h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lno8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h8l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtqvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j66ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp07m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_yx28j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.51628, -0.84374, -0.146829, 0.54363, -0.455343, 0.705074, -0.661756, 0.284195, 0.693767, -43.737, 41.9913, -213.601)
@@ -464,7 +505,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.799, 0.57123, -0.0450044)
 curve = SubResource("Curve3D_hp67e")
 
 [node name="NPCPathFollower" type="PathFollow3D" parent="Path3D" node_paths=PackedStringArray("path")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
 script = ExtResource("17_3f12g")
 speed = 5
 path = NodePath("..")
@@ -765,9 +806,15 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 [node name="Interactable" parent="Gong" instance=ExtResource("23_4rmvb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
 
-[node name="PauseMenu" parent="." instance=ExtResource("24_k5331")]
-
-[node name="FinishScreen" parent="." instance=ExtResource("25_hi5ja")]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2582, 1.15505, -12.0475)
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_wg13h")
+autoplay = "default"
 
 [connection signal="interact" from="Gong/Interactable" to="FireworkSpawnLocations" method="_spawn_fireworks"]
 [connection signal="interact" from="Gong/Interactable" to="Gong" method="_play_gong_sound"]

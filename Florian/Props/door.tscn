@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://b85ujwx0p8gvn"]
+[gd_scene load_steps=11 format=3 uid="uid://b85ujwx0p8gvn"]
 
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="1_ba8gm"]
-[ext_resource type="Script" uid="uid://cs286n0kwgm4l" path="res://Florian/Props/door.gd" id="1_f758y"]
+[ext_resource type="Script" path="res://Florian/Props/door.gd" id="1_f758y"]
+[ext_resource type="Texture2D" uid="uid://c0g55ydym62g0" path="res://Amanda/medieval_tavern_props_pack/textures/planks.png" id="3_v56u4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v6xrn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emhi6"]
 albedo_color = Color(0.64319, 0.418889, 0.248661, 1)
+albedo_texture = ExtResource("3_v56u4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_0phs7"]
 material = SubResource("StandardMaterial3D_emhi6")

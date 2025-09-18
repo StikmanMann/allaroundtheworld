@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxruw32nq7qfw"]
 
-[ext_resource type="Script" uid="uid://dp2yujw0u1aox" path="res://Florian/Props/beer_stand.gd" id="1_qpiuw"]
+[ext_resource type="Script" path="res://Florian/Props/beer_stand.gd" id="1_qpiuw"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="2_ftwn5"]
 [ext_resource type="PackedScene" uid="uid://dj13enetumsfm" path="res://Florian/Entity/People/waitress.tscn" id="3_ftwn5"]
 
@@ -12,6 +12,7 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+visible = false
 size = Vector3(3, 1, 1)
 
 [node name="Interactable" parent="CSGCombiner3D" instance=ExtResource("2_ftwn5")]

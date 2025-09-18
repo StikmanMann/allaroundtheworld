@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2keoh6007qya"]
+
+[ext_resource type="PackedScene" uid="uid://bvd3dl5rqgvh6" path="res://Amanda/new_temple/scene.gltf" id="1_drdxm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l70ql"]
+albedo_color = Color(0.823529, 0.219608, 0.0156863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56oad"]
+albedo_color = Color(0.823529, 0.219608, 0.0156863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h31yj"]
+albedo_color = Color(0.823529, 0.219608, 0.0156863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntak6"]
+albedo_color = Color(0.498039, 0.207843, 0.0313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2nm7"]
+albedo_color = Color(0.823529, 0.219608, 0.0156863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mq6q"]
+albedo_color = Color(0.498039, 0.207843, 0.0313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rmpp"]
+albedo_color = Color(0.823529, 0.219608, 0.0156863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws1hq"]
+albedo_color = Color(0.498039, 0.207843, 0.0313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5h3l"]
+albedo_color = Color(0.498039, 0.207843, 0.0313726, 1)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_drdxm")]
+
+[node name="defaultMaterial25" parent="Sketchfab_model/Collada visual scene group/roof9" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l70ql")
+
+[node name="defaultMaterial34" parent="Sketchfab_model/Collada visual scene group/polySurface24" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_56oad")
+
+[node name="defaultMaterial59" parent="Sketchfab_model/Collada visual scene group/second_floor29" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h31yj")
+
+[node name="defaultMaterial104" parent="Sketchfab_model/Collada visual scene group/polySurface150" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ntak6")
+
+[node name="defaultMaterial113" parent="Sketchfab_model/Collada visual scene group/second_floor19" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j2nm7")
+
+[node name="defaultMaterial157" parent="Sketchfab_model/Collada visual scene group/polySurface96" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0mq6q")
+
+[node name="defaultMaterial182" parent="Sketchfab_model/Collada visual scene group/second_floor10" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6rmpp")
+
+[node name="defaultMaterial228" parent="Sketchfab_model/Collada visual scene group/polySurface42" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ws1hq")
+
+[node name="defaultMaterial239" parent="Sketchfab_model/Collada visual scene group/Balcony18" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_b5h3l")

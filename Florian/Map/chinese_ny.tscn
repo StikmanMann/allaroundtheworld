@@ -1,6 +1,7 @@
-[gd_scene load_steps=64 format=3 uid="uid://b2rihishxk0on"]
+[gd_scene load_steps=67 format=3 uid="uid://b2rihishxk0on"]
 
 [ext_resource type="PackedScene" uid="uid://4qygsglmdow6" path="res://Amanda/temple_gate/source/01door.FBX.fbx" id="1_dr64d"]
+[ext_resource type="Script" uid="uid://cwh8rgqflg34d" path="res://Florian/Map/chinese_ny.gd" id="1_yx28j"]
 [ext_resource type="Texture2D" uid="uid://bnrri5m5k1c1a" path="res://Amanda/grass.png" id="2_r0dy2"]
 [ext_resource type="PackedScene" uid="uid://cvhj68arfuxaq" path="res://Amanda/lion/lion-500k.fbx" id="2_yh5on"]
 [ext_resource type="Texture2D" uid="uid://dmi4dxocjeelu" path="res://Amanda/Sprite assets/body.png" id="4_bsgyk"]
@@ -22,6 +23,8 @@
 [ext_resource type="Script" uid="uid://b7m4mddm1165v" path="res://Florian/Map/firework_spawn_locations.gd" id="21_yd64k"]
 [ext_resource type="PackedScene" uid="uid://iky4i2bjknty" path="res://Florian/Props/gong.tscn" id="22_ppss2"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="23_4rmvb"]
+[ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="24_k5331"]
+[ext_resource type="PackedScene" uid="uid://dl42xs7anteub" path="res://Nikita/finish_screen.tscn" id="25_hi5ja"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qqwfx"]
 top_radius = 50.0
@@ -270,6 +273,7 @@ animations = [{
 albedo_texture = ExtResource("15_bowqk")
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_yx28j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.51628, -0.84374, -0.146829, 0.54363, -0.455343, 0.705074, -0.661756, 0.284195, 0.693767, -43.737, 41.9913, -213.601)
@@ -760,6 +764,10 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 
 [node name="Interactable" parent="Gong" instance=ExtResource("23_4rmvb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+
+[node name="PauseMenu" parent="." instance=ExtResource("24_k5331")]
+
+[node name="FinishScreen" parent="." instance=ExtResource("25_hi5ja")]
 
 [connection signal="interact" from="Gong/Interactable" to="FireworkSpawnLocations" method="_spawn_fireworks"]
 [connection signal="interact" from="Gong/Interactable" to="Gong" method="_play_gong_sound"]

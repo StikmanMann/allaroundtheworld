@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjlojmoyhw2cp"]
+[gd_scene load_steps=11 format=3 uid="uid://cjlojmoyhw2cp"]
 
 [ext_resource type="PackedScene" uid="uid://7fijqcjxggit" path="res://Nikita/source/Earth_Final.fbx" id="1_mnd7v"]
 [ext_resource type="Texture2D" uid="uid://cw4gkryn2sl7y" path="res://Nikita/textures/Earth2_Water_BaseColor.png" id="2_v2ft5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccjwh4alvryho" path="res://Nikita/waypoint.tscn" id="4_drefq"]
 [ext_resource type="PackedScene" uid="uid://by5cq6m32hbor" path="res://Florian/Map/Oktoberfest.tscn" id="5_tyl1s"]
 [ext_resource type="PackedScene" uid="uid://cge0bfktyd7ka" path="res://Nikita/balloonfest.tscn" id="6_3pxso"]
+[ext_resource type="PackedScene" uid="uid://b2rihishxk0on" path="res://Florian/Map/chinese_ny.tscn" id="6_if1dy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyl1s"]
 albedo_texture = ExtResource("2_v2ft5")
@@ -38,6 +39,7 @@ switch_to = ExtResource("5_tyl1s")
 
 [node name="WaypointChi" parent="." index="2" instance=ExtResource("4_drefq")]
 transform = Transform3D(-4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 0.0740627, 0.0439419, 0)
+switch_to = ExtResource("6_if1dy")
 
 [node name="WaypointBal" parent="." index="3" instance=ExtResource("4_drefq")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -0.0725918, 0.0486524, -0.0129466)

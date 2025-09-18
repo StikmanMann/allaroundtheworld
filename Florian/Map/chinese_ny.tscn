@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c117ys2e3arbi"]
+[gd_scene load_steps=57 format=3 uid="uid://c117ys2e3arbi"]
 
 [ext_resource type="PackedScene" uid="uid://4qygsglmdow6" path="res://Amanda/temple_gate/source/01door.FBX.fbx" id="1_dr64d"]
 [ext_resource type="Texture2D" uid="uid://bnrri5m5k1c1a" path="res://Amanda/grass.png" id="2_r0dy2"]
@@ -13,17 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://c2teei5qadpf5" path="res://Amanda/Sprite assets/girl_c.png" id="10_64lnl"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="10_qqwfx"]
 [ext_resource type="PackedScene" uid="uid://osrimuaocr1t" path="res://Amanda/tree/scene.gltf" id="13_cx38t"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_r0dy2"]
-size = Vector3(300, 2, 300)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64lnl"]
-albedo_texture = ExtResource("9_8kkm8")
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqwfx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cx38t"]
-size = Vector3(300, 2, 300)
+[ext_resource type="Texture2D" uid="uid://cb1dwblmnwxcs" path="res://Amanda/Sprite assets/Untitled_Artwork-1 17.png" id="14_s4atm"]
+[ext_resource type="Texture2D" uid="uid://ciiwxhviiq2vy" path="res://Florian/Props/clothgrown.jpg" id="15_bowqk"]
+[ext_resource type="Texture2D" uid="uid://dvat0w2k6bb78" path="res://Amanda/Sprite assets/Untitled_Artwork-1 18.png" id="15_hp67e"]
+[ext_resource type="Texture2D" uid="uid://btt01irygbpwr" path="res://Amanda/skybox/Skydome.png" id="17_hp67e"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qqwfx"]
 top_radius = 50.0
@@ -35,6 +28,17 @@ albedo_texture = ExtResource("2_r0dy2")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s4atm"]
 radius = 50.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_r0dy2"]
+size = Vector3(300, 2, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64lnl"]
+albedo_texture = ExtResource("9_8kkm8")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqwfx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cx38t"]
+size = Vector3(300, 2, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3f12g"]
 atlas = ExtResource("5_tps7f")
@@ -237,7 +241,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp67e"]
+albedo_texture = ExtResource("15_bowqk")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3f12g"]
+panorama = ExtResource("17_hp67e")
+
+[sub_resource type="Sky" id="Sky_qqao8"]
+sky_material = SubResource("PanoramaSkyMaterial_3f12g")
+
+[sub_resource type="Environment" id="Environment_72n5s"]
+background_mode = 2
+sky = SubResource("Sky_qqao8")
+
 [node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.51628, -0.84374, -0.146829, 0.54363, -0.455343, 0.705074, -0.661756, 0.284195, 0.693767, -43.737, 41.9913, -213.601)
+light_color = Color(0.999998, 0.996285, 0.680348, 1)
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 3.0
+light_angular_distance = 7.27
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4748, -0.34801, 23.2248)
+mesh = SubResource("CylinderMesh_qqwfx")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_cx38t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_s4atm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D3"]
+transform = Transform3D(1, 0, 0, 0, 0.000436382, 1, 0, -1, 0.000436382, 1.42281, 7.88169, 0)
+light_energy = 10.0
+spot_range = 15.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9524, -1.68268, 0)
@@ -252,16 +292,6 @@ physics_material_override = SubResource("PhysicsMaterial_qqwfx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.054, 0, 0)
 shape = SubResource("BoxShape3D_cx38t")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.52237, 1.33467, 23.2248)
-mesh = SubResource("CylinderMesh_qqwfx")
-surface_material_override/0 = SubResource("StandardMaterial3D_cx38t")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D/StaticBody3D"]
-shape = SubResource("CylinderShape3D_s4atm")
 
 [node name="PlayerRigidbody" parent="." instance=ExtResource("8_tps7f")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 10.9579, -14.632)
@@ -359,10 +389,163 @@ points_name = "Drag_guy"
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("13_cx38t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 16.1517, -1.20172, 18.6903)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6656, 110.699, -84.8016)
-light_color = Color(0.999998, 0.996285, 0.680348, 1)
-light_energy = 5.0
-light_indirect_energy = 4.556
-light_volumetric_fog_energy = 10.293
-light_angular_distance = 7.27
+[node name="lantern2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9547, 11.7595, 48.3527)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern2" type="Sprite3D" parent="lantern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0528, -0.226463, -8.46686)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern2/lantern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern1" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.7726, 11.7047, 18.3966)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern1" type="Sprite3D" parent="lantern1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2715, -0.074585, 21.1826)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern1/lantern1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern6" type="Sprite3D" parent="."]
+transform = Transform3D(0.999994, 0, 0.00356046, 0, 1, 0, -0.00356046, 0, 0.999994, -61.8229, 11.5187, -11.5412)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern4" type="Sprite3D" parent="."]
+transform = Transform3D(0.999998, 0, 0.00178023, 0, 1, 0, -0.00178023, 0, 0.999998, -42.3437, 11.7213, -3.97876)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.2155, 11.325, 14.9006)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.8918, 11.7556, -5.59572)
+gi_mode = 2
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("14_s4atm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182087, 0.48179, -0.195724)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="lantern_long" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4904, 11.6446, 44.3281)
+pixel_size = 0.1
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("15_hp67e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern_long"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.376202, -0.363543, 0.280273)
+light_color = Color(1, 0.305882, 0.254902, 1)
+light_energy = 2.131
+light_size = 0.1
+omni_range = 6.709
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.1152, 13.3944, 18.3966)
+inner_radius = 30.0
+outer_radius = 30.5
+material = SubResource("StandardMaterial3D_hp67e")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_72n5s")

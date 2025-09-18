@@ -1,23 +1,25 @@
-[gd_scene load_steps=27 format=3 uid="uid://by5cq6m32hbor"]
+[gd_scene load_steps=29 format=3 uid="uid://by5cq6m32hbor"]
 
 [ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_6v0xc"]
+[ext_resource type="Script" uid="uid://bhh76i4a51brf" path="res://Florian/Map/oktoberfest.gd" id="1_20xaa"]
 [ext_resource type="Texture2D" uid="uid://cd1v04y3nf1dv" path="res://Amanda/furni/Images/table_diffuse.jpg" id="1_tre0f"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_82wr0"]
 [ext_resource type="PackedScene" uid="uid://bobfhgsydmmr2" path="res://Florian/pyro.tscn" id="4_h8052"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="5_ygtpi"]
-[ext_resource type="Script" uid="uid://ddwcbl3nbt6j4" path="res://Florian/Map/lights.gd" id="6_g561u"]
+[ext_resource type="Script" path="res://Florian/Map/lights.gd" id="6_g561u"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="6_miqpv"]
 [ext_resource type="PackedScene" uid="uid://bk4djtjemu7we" path="res://Florian/Entity/People/guitar.tscn" id="6_ptxqs"]
 [ext_resource type="PackedScene" uid="uid://c5552lenumx2j" path="res://Florian/Entity/People/saxophone.tscn" id="7_miqpv"]
 [ext_resource type="PackedScene" uid="uid://bybsn53hd1mge" path="res://Florian/Entity/People/guys.tscn" id="9_3box6"]
 [ext_resource type="PackedScene" uid="uid://bw73kprk7ptvn" path="res://Florian/PointsLogic/PictureSpot.tscn" id="10_28ddj"]
-[ext_resource type="Script" uid="uid://cu3fdbo1lelob" path="res://Florian/Map/dancing_people.gd" id="10_mbtuy"]
+[ext_resource type="Script" path="res://Florian/Map/dancing_people.gd" id="10_mbtuy"]
 [ext_resource type="PackedScene" uid="uid://k3ij7wrtwpms" path="res://Florian/table_0.tscn" id="10_ubr03"]
-[ext_resource type="PackedScene" uid="uid://oxm6ufgip22u" path="res://Florian/Props/tent.tscn" id="11_4etk5"]
+[ext_resource type="PackedScene" uid="uid://m3sk1ustdixv" path="res://Florian/Props/tent.tscn" id="11_4etk5"]
 [ext_resource type="Texture2D" uid="uid://cx783frd814e6" path="res://Florian/Decals/power.png" id="11_bsfgy"]
 [ext_resource type="PackedScene" uid="uid://lrf6ltd1wwg1" path="res://Florian/Entity/People/waitress_path.tscn" id="12_g561u"]
 [ext_resource type="PackedScene" uid="uid://ctcspqlxrw22q" path="res://Florian/PhysicsProps/PhysicsBarrel.tscn" id="13_ijkca"]
 [ext_resource type="PackedScene" uid="uid://ow35tpunk744" path="res://Florian/PhysicsProps/physics_beer.tscn" id="18_3uiso"]
+[ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="20_mmnkp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g561u"]
 albedo_texture = ExtResource("1_tre0f")
@@ -48,6 +50,7 @@ point_count = 4
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tre0f"]
 
 [node name="Oktoberfest" type="Node3D"]
+script = ExtResource("1_20xaa")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_g561u")
@@ -384,6 +387,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.252, -14.7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Node3D2" type="Node3D" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("20_mmnkp")]
 
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro2" method="_turn_on_off"]

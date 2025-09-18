@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://iky4i2bjknty"]
+
+[ext_resource type="Texture2D" uid="uid://c5tklwgf0hx4x" path="res://Amanda/Sprite assets/gong.png" id="1_ylc3g"]
+[ext_resource type="Script" uid="uid://ct8d8h6n6yj2h" path="res://Florian/Props/gong.gd" id="2_0uuuv"]
+[ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="2_t4br7"]
+[ext_resource type="AudioStream" uid="uid://bntdj67dhby6v" path="res://Florian/Audio/asian-gong.mp3" id="3_80230"]
+
+[node name="Gong" type="Sprite3D"]
+pixel_size = 0.05
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_ylc3g")
+script = ExtResource("2_0uuuv")
+
+[node name="PointThing" parent="." instance=ExtResource("2_t4br7")]
+points_name = "Gong"
+
+[node name="Asian-gong" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_80230")
+autoplay = true

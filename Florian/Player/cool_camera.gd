@@ -30,6 +30,8 @@ var acceptable_length = 1
 func _calculate_picture_objects():
 	var duplicates: Dictionary = {}
 	for takeable in PictureTakeablesArray.picture_takables:
+		if not takeable:
+			continue
 		#print("Checking takeable")
 		if takeable.picture_taken():
 			var raycast = RayCast3D.new()
@@ -70,6 +72,8 @@ func _calculate_picture_objects():
 
 func _calculate_picture_spots():
 	for spot in PictureTakeablesArray.picture_spots:
+		if not spot:
+			return
 		if spot.picture_taken(player):
 			points_string += "{name} {points}\n".format(
 				{"name" : spot.points_name, "points": spot.points_worth}

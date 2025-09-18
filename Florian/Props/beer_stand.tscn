@@ -1,60 +1,18 @@
-[gd_scene load_steps=11 format=4 uid="uid://orn5b5pi73d3"]
+[gd_scene load_steps=4 format=3 uid="uid://bxruw32nq7qfw"]
 
-[ext_resource type="Script" path="res://Florian/Props/beer_stand.gd" id="1_qpiuw"]
+[ext_resource type="Script" uid="uid://dp2yujw0u1aox" path="res://Florian/Props/beer_stand.gd" id="1_qpiuw"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="2_ftwn5"]
 [ext_resource type="PackedScene" uid="uid://dj13enetumsfm" path="res://Florian/Entity/People/waitress.tscn" id="3_ftwn5"]
-[ext_resource type="Texture2D" uid="uid://vfybiixrbk3m" path="res://Amanda/medieval_tavern_props_pack/textures/tex_bar_counter.png" id="4_o5yow"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dm6ok"]
-resource_name = "mat_bar_counter"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_pudy5"]
-_surfaces = [{
-"aabb": AABB(-5.244, -0.0200002, -1, 10.488, 2.1856, 2),
-"format": 34896613377,
-"index_count": 192,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAAACAAMAAwABAAQAAAADAAUABQADAAQAAAAGAAEABQAEAAcAAAAFAAcABwAEAAEAAAAHAAYABwABAAYACAAJAAoACAALAAkACgAMAAgACgANAAwADAANAA4ADAAOAA8AEAARABIAEAATABEAFAASABEAFAARABUAFgAUABUAFgAVABcAGAAZABoAGAAbABkAHAAYABoAGwAdABkAHAAaAB4AGwAfAB0AHwAcAB4AHwAeAB0AIAAhACIAIAAjACEAJAAgACIAIwAlACEAJAAiACYAIwAnACUAJwAkACYAJwAmACUAKAApACoAKgApACsAKAAsACkAKgArAC0ALgAsACgALQArAC8ALgAvACwALQAvAC4AMAAxADIAMgAxADMAMAA0ADEAMgAzADUANgA0ADAANQAzADcANgA3ADQANQA3ADYAOAA5ADoAOAA7ADkAPAA4ADoAOwA9ADkAPAA6AD4AOwA/AD0APwA8AD4APwA+AD0A"),
-"name": "mat_bar_counter",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 64,
-"vertex_data": PackedByteArray("//+Z6QAAAAD///////8AAP////8AAAAAAAD//wAAAAAAAP////8AAAAAmekAAAAA//+Z6f//AAAAAJnp//8AAJP4AADN2QAAk/hB6jQvAACT+EHqzdkAAJP4AAA0LwAAawcAAM3ZAABrB0HqzdkAAGsHQeo0LwAAawcAADQvAADl+0HqNC8AAOX7AAAo6wAA5ftB6ijrAADl+wAANC8AABkEQeoo6wAAGQQAACjrAAAZBEHqNC8AABkEAAA0LwAA0vYAALfzAADS9kHq4M8AANL2Qeq38wAA0vYAAODPAACn/QAAt/MAAKf9QergzwAAp/1B6rfzAACn/QAA4M8AANL2AADhLwAA0vZB6goMAADS9kHq4S8AANL2AAAKDAAAp/0AAOEvAACn/UHqCgwAAKf9QerhLwAAp/0AAAoMAAAsCQAAt/MAACwJQergzwAALAkAAODPAABXAkHq4M8AACwJQeq38wAAVwIAAODPAABXAgAAt/MAAFcCQeq38wAALAkAAOEvAAAsCUHqCgwAACwJAAAKDAAAVwJB6goMAAAsCUHq4S8AAFcCAAAKDAAAVwIAAOEvAABXAkHq4S8AAJR8AAC38wAAlHxB6uDPAACUfEHqt/MAAJR8AADgzwAAaYMAALfzAABpg0Hq4M8AAGmDQeq38wAAaYMAAODPAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_3x7iw"]
-resource_name = "props_bar_counter"
-_surfaces = [{
-"aabb": AABB(-5.244, -0.0200002, -1, 10.488, 2.1856, 2),
-"attribute_data": PackedByteArray("qv27b//2wrr/9rtvqv3CuqUJu2//9hBppQkQaaUJwrr6Artv+gLCuqQJbcH/9m3BlOT/ZGb9DAOU5AwDZv3/ZHf9DAO04f9ktOEMA3f9/2T/9rtvpAnCuv/2wrqkCbtv3Rr/ZNMBDAPTAf9k3RoMA0oeDAPn4P9kSh7/ZOfgDAMGAgwDfx3/ZAYC/2R/HQwDU94MAzch/2RT3v9kNyEMA4YCm9IB/FDEAfyb0oYCUMSGAufgAfzn4IYCMu8B/DLvhgJ9/QH8ff2GAn39Afwy7wH8ff2GAjLvAfzn4IYC5+AB/JvShgKb0gH8UMSGAlDEhgIy7wH8ff2GAn39Afwy74YC5+AB/OfghgKb0gH8m9KGAlDEAfxQxIYCUMQB/JvShgKb0gH8UMQB/OfghgLn4AH8Mu+GAjLvAfx9/YYCff2GAufgAfyb0gH85+CGApvSAfxQxIYCUMSGAjLvAfwy74YCff0B/H39"),
-"format": 34896613399,
-"index_count": 192,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEABQACAAQABQAEAAYABAABAAcACAAEAAcACAAHAAkACgAHAAEACgABAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAoACoALAAqAC0ALgAsAC0ALgAtAC8AMAAuAC8AMAAvADEAMgAzADQAMgA1ADMANQA2ADMANQA3ADYANwA4ADYANwA5ADgAOQA6ADgAOQA7ADoAPAA9AD4APAA/AD0AQAA/ADwAQABBAD8AQgBBAEAAQgBDAEEARABDAEIARABFAEMARgBHAEgARgBJAEcASABHAEoASABKAEsASwBKAEwASwBMAE0ATQBMAE4ATQBOAE8AUABRAFIAUABTAFEAUwBUAFEAUwBVAFQAVgBQAFIAVgBSAFcAWABWAFcAWABXAFkA"),
-"material": SubResource("StandardMaterial3D_dm6ok"),
-"name": "mat_bar_counter",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 90,
-"vertex_data": PackedByteArray("//+Z6QAAGvv///////9brf////8AAOvd//+Z6f//c9EAAP//AADr3f//mekAAJPhAACZ6QAAk+EAAP////9brQAAmekAABn7AACZ6f//dNEAAJnp//8+qP//men//z+ok/gAAM3ZAACT+EHqNC8AAJP4QerN2QAAk/gAADQvAADl+0HqNC//v+X7AAAo6/+f5ftB6ijr/5/l+wAANC//v///mekAAGseAACZ6f//wFf//5np///AVwAAmekAAGseawcAAM3ZAABrB0HqNC8AAGsHAAA0LwAAawdB6s3ZAAAZBEHqKOv/n+X7AAAo6/+fGQQAACjr/5/l+0HqKOv/nxkEQeo0L/+/GQQAACjr/58ZBAAANC//vxkEQeoo6/+fk/hB6s3ZAABrBwAAzdkAAJP4AADN2QAAawdB6s3ZAADS9gAAt/P8xdL2Qergz6rp0vZB6rfz/MXS9gAA4M+q6af9AAC38/zFp/1B6rfz/MWn/QAA4M+q6af9Qergz6rp0vYAAODPqunS9kHq4M+q6dL2AADhL/zF0vZB6goMqunS9kHq4S/8xdL2AAAKDKrpp/1B6goMqumn/QAACgyq6af9QerhL/zFp/0AAOEv/MXS9kHq4S/8xdL2AADhL/zFLAkAALfz/MUsCUHq4M+q6SwJAADgz6rpLAlB6rfz/MVXAgAAt/P8xVcCQeq38/zFVwIAAODPqulXAkHq4M+q6SwJAADgz6rpLAlB6uDPquksCQAA4S/8xSwJQeoKDKrpLAkAAAoMquksCUHq4S/8xVcCQeoKDKrpVwIAAAoMqulXAkHq4S/8xVcCAADhL/zFLAlB6uEv/MUsCQAA4S/8xZR8AAC38/zFlHxB6uDPqumUfEHqt/P8xZR8AADgz6rpaYNB6uDPqulpgwAA4M+q6WmDAAC38/zFaYNB6rfz/MVpgwAA4M+q6WmDQergz6rpraj6Su66u2AF0tZmSoYxUNXm+K2fC05YsSegi7rgD8X5ylHXMdCz+ZxCGa8ZL2I9//98pf8//3///3yl/z//f/9/AAD/fwAA/38AAP9/AACgC05YnEIZrxovYj2xJ6CLgdr/f/+//3//v/9/gdr/f/9/////fwAA/3////9/AAD/f////3////9/////f/////98pYHa/3///3ylgdr/f//i/+L6yvrK/+L/4vrK+sr/HP8c/xz/HAQ1BDUENQQ1+sr6yvrK+sr/4v/i+sr6yv/i/+L6yvrKBDUENQQ1BDX/HP8c/xz/HP/i/+L/4v/i/xz/HAQ1BDUENQQ1/xz/HP/i/+L/4v/i+sr6yvrK+soENQQ1BDUENf8c/xwENQQ1BDUENf8c/xz6yvrK+sr6yv/i/+L/4v/i/xz/HP8c/xz/4v/i+sr6yv/i/+L6yvrKBDUENQQ1BDX/HP8c/xz/HAQ1BDUENQQ1")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_pudy5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3ris"]
-albedo_texture = ExtResource("4_o5yow")
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o5yow"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3x7iw"]
 
 [node name="BeerStand" type="Node3D"]
 script = ExtResource("1_qpiuw")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+size = Vector3(3, 1, 1)
 
 [node name="Interactable" parent="CSGCombiner3D" instance=ExtResource("2_ftwn5")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.4)
@@ -80,16 +38,3 @@ wait_time = 3.0
 
 [node name="waitress" parent="." instance=ExtResource("3_ftwn5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.7, -1)
-
-[node name="bar_counter" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.499879, 0, -0.0110208, 0, 0.5, 0, 0.0110208, 0, 0.499879, 1.70563, -0.410425, 0.155102)
-mesh = SubResource("ArrayMesh_3x7iw")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_w3ris")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="bar_counter"]
-physics_material_override = SubResource("PhysicsMaterial_o5yow")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bar_counter/StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 2.5, 0, 0, 0, 2, 0, 0.974669, 0)
-shape = SubResource("BoxShape3D_3x7iw")

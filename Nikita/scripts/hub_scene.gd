@@ -15,10 +15,10 @@ func _process(delta: float) -> void:
 func pause_menu():
 	if paused:
 		$PauseMenu.hide()
-		Engine.time_scale = 1
+		get_tree().paused = false
 	else:
 		$PauseMenu.show()
-		Engine.time_scale = 0
+		get_tree().paused = true
 	paused = !paused
 
 func _on_resume_button_pressed():

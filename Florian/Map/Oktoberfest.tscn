@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://by5cq6m32hbor"]
+[gd_scene load_steps=30 format=3 uid="uid://by5cq6m32hbor"]
 
 [ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_6v0xc"]
 [ext_resource type="Script" uid="uid://bhh76i4a51brf" path="res://Florian/Map/oktoberfest.gd" id="1_20xaa"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ctcspqlxrw22q" path="res://Florian/PhysicsProps/PhysicsBarrel.tscn" id="13_ijkca"]
 [ext_resource type="PackedScene" uid="uid://ow35tpunk744" path="res://Florian/PhysicsProps/physics_beer.tscn" id="18_3uiso"]
 [ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="20_mmnkp"]
+[ext_resource type="PackedScene" uid="uid://dl42xs7anteub" path="res://Nikita/finish_screen.tscn" id="21_mmnkp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g561u"]
 albedo_texture = ExtResource("1_tre0f")
@@ -389,6 +390,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Node3D2" type="Node3D" parent="."]
 
 [node name="PauseMenu" parent="." instance=ExtResource("20_mmnkp")]
+
+[node name="FinishScreen" parent="." instance=ExtResource("21_mmnkp")]
 
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro2" method="_turn_on_off"]

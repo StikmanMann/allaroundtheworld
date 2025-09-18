@@ -35,6 +35,6 @@ billboard = 1
 texture = ExtResource("2_iiqp4")
 
 [node name="Popup" parent="." instance=ExtResource("4_3sm4y")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.28591, 0.944037, 2.87264e-07)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.28591, 1.46584, -1.00785)
 
 [connection signal="input_event" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_input_event"]

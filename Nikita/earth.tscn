@@ -13,7 +13,7 @@ albedo_texture = ExtResource("2_v2ft5")
 albedo_texture = ExtResource("3_drefq")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_drefq"]
-radius = 0.444301
+radius = 0.39191
 
 [node name="Earth_Final" instance=ExtResource("1_mnd7v")]
 
@@ -26,6 +26,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_3pxso")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="earth4/Area3D" index="0"]
 transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0, 0)
 shape = SubResource("SphereShape3D_drefq")
+disabled = true
 
 [node name="WaypointOkt" parent="." index="1" instance=ExtResource("4_drefq")]
 transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0.00702367, 0.0636012, 0.0580069)

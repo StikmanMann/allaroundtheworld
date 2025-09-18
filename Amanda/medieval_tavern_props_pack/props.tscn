@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://dydt8t6an07tt"]
+
+[ext_resource type="PackedScene" uid="uid://caeps7026h7y7" path="res://Amanda/medieval_tavern_props_pack/medieval_tavern_props_pack.blend" id="1_mma1v"]
+
+[node name="props" instance=ExtResource("1_mma1v")]
+
+[node name="Hemi" parent="." index="0"]
+visible = false
+
+[node name="barrel" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.17583)
+
+[node name="basket" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.0645)
+
+[node name="bucket_wood" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.93014, 0, 0)
+
+[node name="candle_plate" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.40156, 0, 0)
+
+[node name="chair_wood_2" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5082, 0, 3.10587)
+
+[node name="chair_wood" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.12977)
+
+[node name="tankard_wood" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37739, 0, 3.989)
+
+[node name="lamp_wood" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.50505)
+
+[node name="sack_2" parent="." index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.38367, 0, 0)
+
+[node name="sack" parent="." index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6048, 0, 0)
+
+[node name="shelf_wood" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8662, 0, 6.5915)
+
+[node name="bar_counter" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.5141)
+
+[node name="table_wood" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1636, 0, -6.55838)
+
+[node name="table_wood_round" parent="." index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.6799)
+
+[node name="torch_2" parent="." index="19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.43976)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Chinese temple
+* source:	https://sketchfab.com/3d-models/chinese-temple-bab3eb58339f45eab40fef92fd385f0d
+* author:	Ember11 (https://sketchfab.com/Ember11)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Chinese temple" (https://sketchfab.com/3d-models/chinese-temple-bab3eb58339f45eab40fef92fd385f0d) by Ember11 (https://sketchfab.com/Ember11) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

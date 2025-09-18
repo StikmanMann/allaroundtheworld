@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [node name="waitress" type="AnimatedSprite3D"]
-pixel_size = 0.05
+pixel_size = 0.03
 billboard = 2
 shaded = true
 alpha_cut = 2

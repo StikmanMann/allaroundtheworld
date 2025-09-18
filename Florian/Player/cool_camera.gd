@@ -2,6 +2,8 @@ extends Node3D
 @onready var label: Label = $Control/Label
 @export var player : PlayerRB = null
 
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("take_picture"):
 		_take_picture()
@@ -26,6 +28,7 @@ func _calculate_points():
 var acceptable_length = 1
 
 func _calculate_picture_objects():
+	var duplicates: Dictionary = {}
 	for takeable in PictureTakeablesArray.picture_takables:
 		#print("Checking takeable")
 		if takeable.picture_taken():
@@ -39,23 +42,37 @@ func _calculate_picture_objects():
 			raycast.collide_with_bodies = true
 			raycast.debug_shape_thickness = 2
 			if raycast.is_colliding():
-				print("raycast hit")
+				#print("raycast hit")
 				var raycast_hit = raycast.get_collision_point()
-				print(str((raycast_hit - takeable.global_position).length()))
+				#print(str((raycast_hit - takeable.global_position).length()))
 				if (raycast_hit - takeable.global_position).length() > acceptable_length:
-					print("Not in range!")
+					#print("Not in range!")
 					raycast.queue_free()
 					continue
 			raycast.queue_free()
 			
-			points_string += "{name} {points}\n".format({"name" : takeable.points_name, "points": str(takeable.points_worth)})
-			total_points += takeable.points_worth
+			var points = takeable.points_worth
+			if duplicates.get(takeable.points_name):
+				points = int(points * 0.5)
+				points_string += "Duplicate: {name} {points}\n".format(
+					{"name" : takeable.points_name, "points": points}
+					)
+			else:
+				duplicates[takeable.points_name] = true
+				points_string += "{name} {points}\n".format(
+					{"name" : takeable.points_name, "points": points}
+					)
+			
+			
+			total_points += points
 			total_points_multipliers *= takeable.points_multiplier
 			takeable.show_red_cicle()
 
 func _calculate_picture_spots():
 	for spot in PictureTakeablesArray.picture_spots:
 		if spot.picture_taken(player):
-			points_string += "{name} {points}\n".format({"name" : spot.points_name, "points": str(spot.points_worth)})
+			points_string += "{name} {points}\n".format(
+				{"name" : spot.points_name, "points": spot.points_worth}
+				)
 			total_points += spot.points_worth
 			total_points_multipliers *= spot.points_multiplier

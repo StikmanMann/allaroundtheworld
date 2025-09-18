@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddnwvcwa6drqi"
-valid=false
+path="res://.godot/imported/barrel.blend-d55ef0f77e7a5f2e77ecca4be941021a.scn"
 
 [deps]
 
 source_file="res://Amanda/furni/tent/barrel.blend"
+dest_files=["res://.godot/imported/barrel.blend-d55ef0f77e7a5f2e77ecca4be941021a.scn"]
 
 [params]
 

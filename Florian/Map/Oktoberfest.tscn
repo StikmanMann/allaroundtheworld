@@ -1,6 +1,5 @@
 [gd_scene load_steps=27 format=3 uid="uid://by5cq6m32hbor"]
 
-[ext_resource type="Texture2D" uid="uid://dv401srtwuvtg" path="res://icon.svg" id="1_6v0xc"]
 [ext_resource type="Texture2D" uid="uid://cd1v04y3nf1dv" path="res://Amanda/furni/Images/table_diffuse.jpg" id="1_tre0f"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_82wr0"]
 [ext_resource type="PackedScene" uid="uid://bobfhgsydmmr2" path="res://Florian/pyro.tscn" id="4_h8052"]
@@ -18,15 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://lrf6ltd1wwg1" path="res://Florian/Entity/People/waitress_path.tscn" id="12_g561u"]
 [ext_resource type="PackedScene" uid="uid://ctcspqlxrw22q" path="res://Florian/PhysicsProps/PhysicsBarrel.tscn" id="13_ijkca"]
 [ext_resource type="PackedScene" uid="uid://ow35tpunk744" path="res://Florian/PhysicsProps/physics_beer.tscn" id="18_3uiso"]
+[ext_resource type="PackedScene" uid="uid://bxruw32nq7qfw" path="res://Florian/Props/beer_stand.tscn" id="19_d5eeg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g561u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uiso"]
 albedo_texture = ExtResource("1_tre0f")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eral8"]
-albedo_texture = ExtResource("1_6v0xc")
+uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_82wr0"]
-material = SubResource("StandardMaterial3D_eral8")
+material = SubResource("StandardMaterial3D_3uiso")
 size = Vector2(500, 500)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tw6g5"]
@@ -47,20 +45,22 @@ point_count = 4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tre0f"]
 
+[sub_resource type="Environment" id="Environment_d5eeg"]
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
 [node name="Oktoberfest" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_g561u")
 mesh = SubResource("PlaneMesh_82wr0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378755, 0)
 shape = SubResource("WorldBoundaryShape3D_tw6g5")
 
 [node name="PlayerRigidbody" parent="." instance=ExtResource("2_82wr0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 1, -9)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 1, -9)
 
 [node name="Stage" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
@@ -384,6 +384,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.252, -14.7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Node3D2" type="Node3D" parent="."]
+
+[node name="BeerStand" parent="." instance=ExtResource("19_d5eeg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 0.399999, 8)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d5eeg")
 
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro" method="_turn_on_off"]
 [connection signal="interact" from="Stage/Interactable" to="Stage/Pyro2" method="_turn_on_off"]

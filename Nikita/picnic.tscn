@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://chwdbfp1bmoqc"]
+
+[ext_resource type="Texture2D" uid="uid://cuexrw4vdmgj" path="res://Nikita/textures/basket_upscale.png" id="1_hiplp"]
+[ext_resource type="Texture2D" uid="uid://cki4xg0axw8yb" path="res://Nikita/textures/blanket_upscalet.png" id="2_gymbc"]
+
+[node name="PicnicV1" type="Node3D"]
+
+[node name="Basket" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.450692, 0.400892, -0.434555)
+sorting_offset = 10.0
+billboard = 2
+alpha_cut = 1
+texture = ExtResource("1_hiplp")
+
+[node name="Blanket" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0.01, 0)
+modulate = Color(1, 0.65098, 0.596078, 1)
+texture = ExtResource("2_gymbc")

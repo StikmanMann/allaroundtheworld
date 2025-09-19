@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cge0bfktyd7ka"]
+[gd_scene load_steps=36 format=3 uid="uid://cge0bfktyd7ka"]
 
 [ext_resource type="Texture2D" uid="uid://b0ml0awb8t7yh" path="res://Nikita/textures/golden_gate_hills_1k.png" id="1_dcn22"]
 [ext_resource type="PackedScene" uid="uid://djdo6lntq4tq0" path="res://Nikita/source/ballons.glb" id="1_fqyqv"]
@@ -21,7 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://nepyioiql1p7" path="res://Nikita/source/simple_car_break_low_poly.glb" id="18_3unov"]
 [ext_resource type="PackedScene" uid="uid://dv7728isc44gi" path="res://Nikita/source/simple_car_low_poly.glb" id="19_34i2w"]
 [ext_resource type="Script" uid="uid://c8g6sb8ucm421" path="res://Nikita/scripts/path_follow_balloon.gd" id="20_34i2w"]
+[ext_resource type="PackedScene" uid="uid://c5552lenumx2j" path="res://Florian/Entity/People/saxophone.tscn" id="21_oq2w4"]
 [ext_resource type="Script" uid="uid://dvb3u2fiio68w" path="res://Nikita/scripts/path_follow_balloon_up.gd" id="22_hsesi"]
+[ext_resource type="PackedScene" uid="uid://bybsn53hd1mge" path="res://Florian/Entity/People/guys.tscn" id="23_cqpa7"]
+[ext_resource type="Script" uid="uid://be7duobvgkkeo" path="res://Nikita/scripts/path_follow_3d.gd" id="25_6exkg"]
+[ext_resource type="PackedScene" uid="uid://b56u6jt4qr0i6" path="res://Nikita/ballon_gold.tscn" id="25_rdcwi"]
+[ext_resource type="AudioStream" uid="uid://cqbl4amwc7856" path="res://Nikita/source/frna-field-mountain-insects-grasshopper-flyers-with-light-wind-in-tree.mp3" id="27_r7sp0"]
+[ext_resource type="AudioStream" uid="uid://bu1o0ehw476w6" path="res://Nikita/source/6188e449e9fae91.mp3" id="28_jr03o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eb1mq"]
 panorama = ExtResource("1_dcn22")
@@ -57,6 +63,15 @@ bake_interval = 136.66
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10, 0, 8, 0, 0, 0, 0, 0, 0, 23.9597, -9.04391, -54.0334, 0, 0, 0, 0, 0, 0, -78.1501, 17.7899, -23.6639),
 "tilts": PackedFloat32Array(0.31, 0.22, -0.325)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_oq2w4"]
+closed = true
+bake_interval = 15.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 35.175, 14.6756, -1.82783, 0.490643, 0, 0, 0, 0, 0, 6.125, -5.04593, 26.9871, 49.7222, 0, 0, 23.33, 0, 0, -28.3, 0, 52.2766, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
@@ -214,6 +229,15 @@ transform = Transform3D(0.995198, 0, 0.0978782, 0, 1, 0, -0.0978782, 0, 0.995198
 transform = Transform3D(0.736459, 0, 0, 0, 0.462981, 0, 0, 0, 0.935879, 0, 1.22559, -0.459291)
 points_name = "car green"
 
+[node name="guys" parent="StaticObjects" instance=ExtResource("23_cqpa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8138, 0.9, 10.0745)
+
+[node name="guys2" parent="StaticObjects" instance=ExtResource("23_cqpa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8138, 0.9, 12.3287)
+
+[node name="guys3" parent="StaticObjects" instance=ExtResource("23_cqpa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8936, 0.9, 12.3287)
+
 [node name="Balloons" type="Node" parent="."]
 
 [node name="Path3D" type="Path3D" parent="Balloons"]
@@ -237,7 +261,7 @@ transform = Transform3D(-0.173545, 0, 0.984826, 0, 1, 0, -0.984826, 0, -0.173545
 curve = SubResource("Curve3D_3unov")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D2"]
-transform = Transform3D(-0.0958825, -0.018765, 0.995209, -0.192064, 0.981379, -1.11758e-08, -0.976683, -0.191145, -0.0977012, -64.1844, 20, -27.8943)
+transform = Transform3D(-0.0958825, -0.018765, 0.995208, -0.192064, 0.981379, -1.11758e-08, -0.976683, -0.191145, -0.0977011, -64.1844, 20, -27.8943)
 progress = 91.2869
 rotation_mode = 1
 script = ExtResource("20_34i2w")
@@ -248,6 +272,9 @@ script = ExtResource("20_34i2w")
 transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
 points_worth = 100
 points_name = "red balloon"
+
+[node name="saxophone" parent="Balloons/Path3D2/PathFollow3D/Balloon_red" instance=ExtResource("21_oq2w4")]
+transform = Transform3D(1, 1.86265e-08, 0, 7.45058e-09, 1, 0, 0, -3.72529e-09, 1, -0.204922, 1.04708, 0)
 
 [node name="Path3D3" type="Path3D" parent="Balloons"]
 transform = Transform3D(0.967674, 0, -0.252204, 0, 1, 0, 0.252204, 0, 0.967674, 38.7874, 0, -21.8904)
@@ -266,12 +293,15 @@ transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 
 points_worth = 100
 points_name = "green balloon"
 
+[node name="guys" parent="Balloons/Path3D3/PathFollow3D/Ballon_green" instance=ExtResource("23_cqpa7")]
+transform = Transform3D(0.728493, 0.0679675, 0.323537, -0.0743622, 0.796531, 0.000104495, -0.322129, -0.0301701, 0.731653, 0, 1.17756, 0)
+
 [node name="Path3D4" type="Path3D" parent="Balloons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.0308, 43.2901, 15.5027)
 curve = SubResource("Curve3D_hsesi")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D4"]
-transform = Transform3D(0.919657, 0.29319, -0.261245, -0.302015, 0.953273, 0.00664529, 0.250986, 0.0727895, 0.965241, 10, 0, 8)
+transform = Transform3D(0.919657, 0.29319, -0.261245, -0.302015, 0.953273, 0.0066453, 0.250986, 0.0727895, 0.965242, 10, 0, 8)
 rotation_mode = 1
 script = ExtResource("22_hsesi")
 
@@ -283,7 +313,7 @@ points_worth = 100
 points_name = "blue balloon"
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Balloons/Path3D4"]
-transform = Transform3D(0.963826, 0.0899486, 0.250846, -0.0929528, 0.995663, 0.000130762, -0.249747, -0.0234432, 0.968018, 4.18684, -4.32774, -53.3213)
+transform = Transform3D(0.963824, 0.0899486, 0.250846, -0.0929527, 0.995663, 0.000130762, -0.249747, -0.0234432, 0.968018, 4.18684, -4.32774, -53.3213)
 progress = 89.7982
 rotation_mode = 1
 script = ExtResource("22_hsesi")
@@ -294,3 +324,32 @@ script = ExtResource("22_hsesi")
 transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
 points_worth = 100
 points_name = "red balloon"
+
+[node name="Path3D5" type="Path3D" parent="Balloons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2645, 36.366, -1.58754)
+curve = SubResource("Curve3D_oq2w4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D5"]
+transform = Transform3D(-0.762206, 0, 0.647327, 0, 0.999999, 0, -0.647325, 0, -0.762209, -2.69563, 23.5, 47.7876)
+progress = 58.6301
+rotation_mode = 1
+script = ExtResource("25_6exkg")
+
+[node name="Sketchfab_Scene" parent="Balloons/Path3D5/PathFollow3D" instance=ExtResource("25_rdcwi")]
+
+[node name="PointThing" parent="Balloons/Path3D5/PathFollow3D/Sketchfab_Scene" instance=ExtResource("8_kwais")]
+points_worth = 300
+points_name = "gold balloon"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8459, 17.0931, 2.63612)
+stream = ExtResource("28_jr03o")
+autoplay = true
+max_distance = 40.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_r7sp0")
+volume_db = -9.369
+autoplay = true
+parameters/looping = true

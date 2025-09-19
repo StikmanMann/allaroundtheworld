@@ -63,6 +63,8 @@ func _calculate_picture_objects():
 			var label = Label3D.new()
 			label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 			label.fixed_size = true
+			label.top_level = true
+			label.global_position = takeable.global_position
 			label.font_size = 100
 			label.pixel_size = 0.001
 			

@@ -1,7 +1,6 @@
 [gd_scene load_steps=71 format=3 uid="uid://b2rihishxk0on"]
 
 [ext_resource type="PackedScene" uid="uid://4qygsglmdow6" path="res://Amanda/temple_gate/source/01door.FBX.fbx" id="1_dr64d"]
-[ext_resource type="Script" path="res://Florian/Map/chinese_ny.gd" id="1_yx28j"]
 [ext_resource type="Texture2D" uid="uid://bnrri5m5k1c1a" path="res://Amanda/grass.png" id="2_r0dy2"]
 [ext_resource type="PackedScene" uid="uid://cvhj68arfuxaq" path="res://Amanda/lion/lion-500k.fbx" id="2_yh5on"]
 [ext_resource type="Texture2D" uid="uid://dmi4dxocjeelu" path="res://Amanda/Sprite assets/body.png" id="4_bsgyk"]
@@ -19,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://w207q4aq0uoc" path="res://Amanda/Sprite assets/Untitled_Artwork-1 18.png" id="15_hp67e"]
 [ext_resource type="Script" path="res://npc_path_follower.gd" id="17_3f12g"]
 [ext_resource type="PackedScene" uid="uid://dggx2w2c8xojc" path="res://Florian/PhysicsProps/firework.tscn" id="19_qqao8"]
-[ext_resource type="AudioStream" uid="uid://yuv8dxd17p6s" path="res://Florian/Audio/chineseAmbientMusicGame.ogg" id="20_72n5s"]
+[ext_resource type="AudioStream" uid="uid://cr4l7i1y227ru" path="res://Florian/Audio/chineseAmbientMusicGame.ogg" id="20_72n5s"]
 [ext_resource type="Script" uid="uid://b7m4mddm1165v" path="res://Florian/Map/firework_spawn_locations.gd" id="21_yd64k"]
 [ext_resource type="PackedScene" uid="uid://iky4i2bjknty" path="res://Florian/Props/gong.tscn" id="22_ppss2"]
 [ext_resource type="PackedScene" uid="uid://byhsp6ujjsh8m" path="res://Florian/Entity/interactable.tscn" id="23_4rmvb"]
-[ext_resource type="Texture2D" uid="uid://rqu0vn1n5kys" path="res://Amanda/Sprite assets/boy_c.png" id="23_oagmg"]
+[ext_resource type="Texture2D" uid="uid://dsb36yt01ism8" path="res://Amanda/Sprite assets/boy_c.png" id="23_oagmg"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qqwfx"]
 top_radius = 50.0

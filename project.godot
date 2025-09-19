@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 PictureTakeablesArray="*res://picture_takeables_array.gd"
 PathfindingArray="*res://pathfinding_array.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 forward={

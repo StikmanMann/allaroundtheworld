@@ -13,6 +13,7 @@ friction = 0.0
 
 [node name="PlayerRigidbody" type="RigidBody3D"]
 disable_mode = 2
+collision_mask = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -60,36 +61,44 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 [node name="FloorRay" type="RayCast3D" parent="BoundingBox/FloorChecks/Diagonals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="FloorRay2" type="RayCast3D" parent="BoundingBox/FloorChecks/Diagonals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="FloorRay4" type="RayCast3D" parent="BoundingBox/FloorChecks/Diagonals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="FloorRay3" type="RayCast3D" parent="BoundingBox/FloorChecks/Diagonals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, 0)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="Cardinals" type="Node3D" parent="BoundingBox/FloorChecks"]
 
 [node name="FloorRay" type="RayCast3D" parent="BoundingBox/FloorChecks/Cardinals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="FloorRay2" type="RayCast3D" parent="BoundingBox/FloorChecks/Cardinals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="FloorRay4" type="RayCast3D" parent="BoundingBox/FloorChecks/Cardinals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="FloorRay3" type="RayCast3D" parent="BoundingBox/FloorChecks/Cardinals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, 0)
 target_position = Vector3(0, -1.1, 0)
+collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_n7bvk")

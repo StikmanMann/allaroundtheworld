@@ -36,6 +36,11 @@ _subresources={
 "nodes": {
 "PATH:Sketchfab_model/root/GLTF_SceneRootNode/Ground_7": {
 "import/skip_import": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/SimpleBreakCar_Body_6/Object_9": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2
 }
 }
 }

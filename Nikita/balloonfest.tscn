@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cge0bfktyd7ka"]
+[gd_scene load_steps=29 format=3 uid="uid://cge0bfktyd7ka"]
 
 [ext_resource type="Texture2D" uid="uid://b0ml0awb8t7yh" path="res://Nikita/textures/golden_gate_hills_1k.png" id="1_dcn22"]
 [ext_resource type="PackedScene" uid="uid://djdo6lntq4tq0" path="res://Nikita/source/ballons.glb" id="1_fqyqv"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://nepyioiql1p7" path="res://Nikita/source/simple_car_break_low_poly.glb" id="18_3unov"]
 [ext_resource type="PackedScene" uid="uid://dv7728isc44gi" path="res://Nikita/source/simple_car_low_poly.glb" id="19_34i2w"]
 [ext_resource type="Script" uid="uid://c8g6sb8ucm421" path="res://Nikita/scripts/path_follow_balloon.gd" id="20_34i2w"]
+[ext_resource type="Script" uid="uid://dvb3u2fiio68w" path="res://Nikita/scripts/path_follow_balloon_up.gd" id="22_hsesi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eb1mq"]
 panorama = ExtResource("1_dcn22")
@@ -36,16 +37,36 @@ sky = SubResource("Sky_ojto3")
 closed = true
 bake_interval = 14.83
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, -1.655, 0, 0, 0, 0, 0, -22.945, -13.795, 20, -19.43, 50, 0, -16.765, -2.86, 0, 0, -84.175, 20, -23.4, -5.675, 0, -5.215, 0, 0, 0, -80, 20, 0, -5.445, 0, 0, 6.005, 0, 0, -52.875, 20, 43.29, 0, 0, 0, 0, 0, 0, -5.33, 20, 9.875),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, -1.655, 0, 0, 0, 0, 0, 2.945, -22.349, 20, -12.1355, 50, 0, -16.765, -2.86, 0, 0, -84.175, 20, -23.4, -5.675, 0, -5.215, 0, 0, 0, -80, 20, 0, -5.445, 0, 0, 6.005, 0, 0, -52.875, 23.019, 43.29, 0, 0, 0, 0, 0, 0, -0.0897903, 24.193, 10.7984),
+"tilts": PackedFloat32Array(0, 0.44, -0.47, 0.315, 0.205, -0.16, 0)
 }
 point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_34i2w"]
+closed = true
+bake_interval = 15.0
+_data = {
+"points": PackedVector3Array(16.855, 0, 0, -0.82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14.9004, 20, -4.12159, 0, 0, 0, 0, 0, 0, -20.1336, 24.1022, -14.7483, 0, 0, 0, 0, 0, 0, -56.1683, 20.2098, -16.8492, -66.015, 0, 0, 0, 0, 0, -36.7816, 22.165, -45.2385, 0, 0, 0, 0, 0, 0, 1.53067, 21.5773, -15.1553),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0.685)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_hsesi"]
+closed = true
+bake_interval = 136.66
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10, 0, 8, 0, 0, 0, 0, 0, 0, 23.9597, -9.04391, -54.0334, 0, 0, 0, 0, 0, 0, -78.1501, 17.7899, -23.6639),
+"tilts": PackedFloat32Array(0.31, 0.22, -0.325)
+}
+point_count = 3
 
 [node name="Balloonfest" type="Node3D"]
 script = ExtResource("1_ojto3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 34.0624, 0)
+transform = Transform3D(0.997313, 0.0560842, -0.047127, 0, 0.643322, 0.765596, 0.0732556, -0.763539, 0.641594, 1.66995, 34.0624, 24.9105)
+layers = 3
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_akthd")
@@ -57,8 +78,10 @@ transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.9729, 0, 0.821295)
 transform = Transform3D(-0.92239, 0, 0.38626, 0, 1, 0, -0.38626, 0, -0.92239, 24.3581, 1.35472, -30.0003)
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_eb1mq")]
+metadata/_edit_use_anchors_ = true
 
 [node name="FinishScreen" parent="." instance=ExtResource("7_xc4lk")]
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticObjects" type="Node" parent="."]
 
@@ -67,12 +90,14 @@ transform = Transform3D(-0.983757, 0, 0.179506, 0, 1, 0, -0.179506, 0, -0.983757
 
 [node name="PointThing" parent="StaticObjects/Picnic1" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.301177, 0, 1.49012e-08, 0, 0.211065, 0, -2.23517e-08, 0, 0.302563, 0.0501136, 0.310955, 0.00953996)
+points_name = "picnic"
 
 [node name="Picnic2" parent="StaticObjects" instance=ExtResource("7_kwais")]
 transform = Transform3D(-0.98248, 0, 0.18637, 0, 1, 0, -0.18637, 0, -0.98248, 26.6857, 0, 14.7592)
 
 [node name="PointThing" parent="StaticObjects/Picnic2" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.301177, 0, 1.49012e-08, 0, 0.211065, 0, -2.23517e-08, 0, 0.302563, 0.0501136, 0.310955, 0.00953996)
+points_name = "picnic"
 
 [node name="PicnicFull" parent="StaticObjects" instance=ExtResource("9_5a716")]
 transform = Transform3D(-0.898235, 0, -0.439516, 0, 1, 0, 0.439516, 0, -0.898235, 27.1366, 0, 12.3341)
@@ -80,6 +105,7 @@ transform = Transform3D(-0.898235, 0, -0.439516, 0, 1, 0, 0.439516, 0, -0.898235
 [node name="PointThing" parent="StaticObjects/PicnicFull" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.475593, 0, 7.45058e-08, 0, 0.279239, 0, 1.49012e-08, 0, 0.422141, 0, 0.182704, 0)
 points_worth = 20
+points_name = "picnic full"
 
 [node name="PicnicFull2" parent="StaticObjects" instance=ExtResource("9_5a716")]
 transform = Transform3D(-0.403274, 0, -0.915079, 0, 1, 0, 0.915079, 0, -0.403274, 27.1891, -2.38419e-07, 17.253)
@@ -87,6 +113,7 @@ transform = Transform3D(-0.403274, 0, -0.915079, 0, 1, 0, 0.915079, 0, -0.403274
 [node name="PointThing" parent="StaticObjects/PicnicFull2" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.475593, 0, 7.45058e-08, 0, 0.279239, 0, 1.49012e-08, 0, 0.422141, 0, 0.182704, 0)
 points_worth = 20
+points_name = "picnic full"
 
 [node name="HotDogStand" parent="StaticObjects" instance=ExtResource("10_q5367")]
 transform = Transform3D(-0.2, 0, 0.34641, 0, 0.4, 0, -0.34641, 0, -0.2, 24.1243, 0.425832, 20.9149)
@@ -94,6 +121,7 @@ transform = Transform3D(-0.2, 0, 0.34641, 0, 0.4, 0, -0.34641, 0, -0.2, 24.1243,
 [node name="PointThing" parent="StaticObjects/HotDogStand" instance=ExtResource("8_kwais")]
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, 0, 0, 1.74927, 0, 1.39094, 0.913326)
 points_worth = 20
+points_name = "hot dog"
 
 [node name="HotDogStand2" parent="StaticObjects" instance=ExtResource("10_q5367")]
 transform = Transform3D(0.2, 0, 0.34641, 0, 0.4, 0, -0.34641, 0, 0.2, 18.8312, 0.425832, 20.504)
@@ -101,6 +129,7 @@ transform = Transform3D(0.2, 0, 0.34641, 0, 0.4, 0, -0.34641, 0, 0.2, 18.8312, 0
 [node name="PointThing" parent="StaticObjects/HotDogStand2" instance=ExtResource("8_kwais")]
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, 0, 0, 1.74927, 0, 1.39094, 0.913326)
 points_worth = 20
+points_name = "hot dog"
 
 [node name="SchoolBus" parent="StaticObjects" instance=ExtResource("11_o12ro")]
 transform = Transform3D(0.4223, 0, -0.2677, 0, 0.5, 0, 0.2677, 0, 0.4223, 49.2148, 0.292181, -21.0927)
@@ -108,6 +137,7 @@ transform = Transform3D(0.4223, 0, -0.2677, 0, 0.5, 0, 0.2677, 0, 0.4223, 49.214
 [node name="PointThing" parent="StaticObjects/SchoolBus" instance=ExtResource("8_kwais")]
 transform = Transform3D(1.71479, 0, 0, 0, 1, 0, 1.19209e-07, 0, 1.72247, 0, 2.0561, 0)
 points_worth = 20
+points_name = "bus"
 
 [node name="Van" parent="StaticObjects" instance=ExtResource("12_etfuq")]
 transform = Transform3D(0.798467, 0, -0.602038, 0, 1, 0, 0.602038, 0, 0.798467, 46.4975, 1.14667, -25.0098)
@@ -115,24 +145,28 @@ transform = Transform3D(0.798467, 0, -0.602038, 0, 1, 0, 0.602038, 0, 0.798467, 
 [node name="PointThing" parent="StaticObjects/Van" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.51424, 0, 1.78814e-07, 0, 1, 0, -8.9407e-08, 0, 1.37197, 0, 0, 0)
 points_worth = 20
+points_name = "van"
 
 [node name="Car" parent="StaticObjects" instance=ExtResource("13_pgrr1")]
 transform = Transform3D(0.96896, 0, 0.247219, 0, 1, 0, -0.247219, 0, 0.96896, 55.0955, -1.86265e-07, -19.3263)
 
 [node name="PointThing" parent="StaticObjects/Car" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.729512, 0, 7.45058e-09, 0, 0.618621, 0, 7.45058e-08, 0, 0.442139, -0.0704575, 1.51319, 0.276157)
+points_name = "car"
 
 [node name="Car2" parent="StaticObjects" instance=ExtResource("13_pgrr1")]
 transform = Transform3D(0.943726, 0, 0.330729, 0, 1, 0, -0.330729, 0, 0.943726, 56.7966, 2.90573e-07, -35.3262)
 
 [node name="PointThing" parent="StaticObjects/Car2" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.729512, 0, 7.45058e-09, 0, 0.618621, 0, 7.45058e-08, 0, 0.442139, -0.0704575, 1.51319, 0.276157)
+points_name = "car"
 
 [node name="Car3" parent="StaticObjects" instance=ExtResource("13_pgrr1")]
 transform = Transform3D(-0.974099, 0, 0.226124, 0, 1, 0, -0.226124, 0, -0.974099, 61.4914, 7.6741e-07, -21.5067)
 
 [node name="PointThing" parent="StaticObjects/Car3" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.729512, 0, 7.45058e-09, 0, 0.618621, 0, 7.45058e-08, 0, 0.442139, -0.0704575, 1.51319, 0.276157)
+points_name = "car"
 
 [node name="PicnicTable" parent="StaticObjects" instance=ExtResource("14_3unov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3132, 7.45058e-07, 8.65067)
@@ -157,53 +191,108 @@ transform = Transform3D(1.19638, 0, 0.0931069, 0, 1.2, 0, -0.0931069, 0, 1.19638
 
 [node name="PointThing" parent="StaticObjects/CarGreen" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.637748, 0, -3.72529e-09, 0, 0.311656, 0, 7.45058e-09, 0, 0.71722, 0.01577, 0.904033, -0.202635)
+points_name = "car green"
 
 [node name="CarGreen2" parent="StaticObjects" instance=ExtResource("19_34i2w")]
 transform = Transform3D(-1.13357, 0, -0.39371, 0, 1.2, 0, 0.39371, 0, -1.13357, 59.8752, 0.0262708, -34.3069)
 
 [node name="PointThing" parent="StaticObjects/CarGreen2" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.637748, 0, -3.72529e-09, 0, 0.311656, 0, 7.45058e-09, 0, 0.71722, 0.01577, 0.904033, -0.202635)
+points_name = "car green"
 
 [node name="VanGreen" parent="StaticObjects" instance=ExtResource("17_d2dy3")]
 transform = Transform3D(0.728132, 0, -0.685437, 0, 1, 0, 0.685437, 0, 0.728132, 46.4559, 0, -31.4143)
 
 [node name="PointThing" parent="StaticObjects/VanGreen" instance=ExtResource("8_kwais")]
 transform = Transform3D(1, 0, 0, 0, 0.750005, 0, 0, 0, 1.27738, 0, 1.31796, -0.295502)
+points_name = "van green"
 
 [node name="Car2Green" parent="StaticObjects" instance=ExtResource("18_3unov")]
 transform = Transform3D(0.995198, 0, 0.0978782, 0, 1, 0, -0.0978782, 0, 0.995198, 53.9483, 0, -36.4685)
 
 [node name="PointThing" parent="StaticObjects/Car2Green" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.736459, 0, 0, 0, 0.462981, 0, 0, 0, 0.935879, 0, 1.22559, -0.459291)
+points_name = "car green"
 
 [node name="Balloons" type="Node" parent="."]
-
-[node name="Balloon_red" parent="Balloons" instance=ExtResource("15_d7t4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="PointThing" parent="Balloons/Balloon_red" instance=ExtResource("8_kwais")]
-transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
-points_worth = 100
-
-[node name="Ballon_green" parent="Balloons" instance=ExtResource("16_ydib1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
-
-[node name="PointThing" parent="Balloons/Ballon_green" instance=ExtResource("8_kwais")]
-transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
-points_worth = 100
 
 [node name="Path3D" type="Path3D" parent="Balloons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8878, 0.0518169, -9.80802)
 curve = SubResource("Curve3D_3unov")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D"]
-transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999997, 0, 0, 0)
+transform = Transform3D(0.999996, 0, 0, 0, 0.999999, 0, 0, 0, 0.999996, 0, 0, 0)
 rotation_mode = 1
-tilt_enabled = false
 script = ExtResource("20_34i2w")
 
 [node name="Balloon_blue" parent="Balloons/Path3D/PathFollow3D" instance=ExtResource("14_pgrr1")]
 
-[node name="PointThing" parent="Balloons/Path3D/PathFollow3D/Balloon_blue" instance=ExtResource("8_kwais")]
+[node name="PointsThing" parent="Balloons/Path3D/PathFollow3D/Balloon_blue" instance=ExtResource("8_kwais")]
+transform = Transform3D(2.61643, 0, 0, 0, 6.71267, 0, 0, 0, 2.85342, 0, 9.7302, 0)
+points_worth = 100
+points_name = "blue balloon"
+
+[node name="Path3D2" type="Path3D" parent="Balloons"]
+transform = Transform3D(-0.173545, 0, 0.984826, 0, 1, 0, -0.984826, 0, -0.173545, 37.8324, 0.0518169, -5.40548)
+curve = SubResource("Curve3D_3unov")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D2"]
+transform = Transform3D(-0.0958829, -0.0187651, 0.995209, -0.192064, 0.981379, 1.11758e-08, -0.976683, -0.191145, -0.0977016, -64.1844, 20, -27.8943)
+progress = 91.2869
+rotation_mode = 1
+script = ExtResource("20_34i2w")
+
+[node name="Balloon_red" parent="Balloons/Path3D2/PathFollow3D" instance=ExtResource("15_d7t4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PointThing" parent="Balloons/Path3D2/PathFollow3D/Balloon_red" instance=ExtResource("8_kwais")]
 transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
 points_worth = 100
+points_name = "red balloon"
+
+[node name="Path3D3" type="Path3D" parent="Balloons"]
+transform = Transform3D(0.967674, 0, -0.252204, 0, 1, 0, 0.252204, 0, 0.967674, 38.7874, 0, -21.8904)
+curve = SubResource("Curve3D_34i2w")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D3"]
+transform = Transform3D(0.0952987, 0, -0.995441, 0, 1, 0, 0.995441, 0, 0.0952987, -51.0871, 22.1303, -44.7341)
+progress = 122.514
+rotation_mode = 1
+script = ExtResource("20_34i2w")
+
+[node name="Ballon_green" parent="Balloons/Path3D3/PathFollow3D" instance=ExtResource("16_ydib1")]
+
+[node name="PointThing" parent="Balloons/Path3D3/PathFollow3D/Ballon_green" instance=ExtResource("8_kwais")]
+transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
+points_worth = 100
+points_name = "green balloon"
+
+[node name="Path3D4" type="Path3D" parent="Balloons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.0308, 43.2901, 15.5027)
+curve = SubResource("Curve3D_hsesi")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D4"]
+transform = Transform3D(0.919657, 0.29319, -0.261245, -0.302015, 0.953273, 0.00664531, 0.250987, 0.0727896, 0.965241, 10, 0, 8)
+rotation_mode = 1
+script = ExtResource("22_hsesi")
+
+[node name="Balloon_blue" parent="Balloons/Path3D4/PathFollow3D" instance=ExtResource("14_pgrr1")]
+
+[node name="PointsThing" parent="Balloons/Path3D4/PathFollow3D/Balloon_blue" instance=ExtResource("8_kwais")]
+transform = Transform3D(2.61643, 0, 0, 0, 6.71267, 0, 0, 0, 2.85342, 0, 9.7302, 0)
+points_worth = 100
+points_name = "blue balloon"
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Balloons/Path3D4"]
+transform = Transform3D(0.963826, 0.0899486, 0.250846, -0.0929528, 0.995663, 0.000130766, -0.249747, -0.0234432, 0.968018, 4.18687, -4.32775, -53.3213)
+progress = 89.7982
+rotation_mode = 1
+script = ExtResource("22_hsesi")
+
+[node name="Balloon_red" parent="Balloons/Path3D4/PathFollow3D2" instance=ExtResource("15_d7t4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PointThing" parent="Balloons/Path3D4/PathFollow3D2/Balloon_red" instance=ExtResource("8_kwais")]
+transform = Transform3D(3.65105, 0, 0, 0, 7.64798, 0, 0, 0, 3.65105, 0, 9.7302, 0)
+points_worth = 100
+points_name = "red balloon"

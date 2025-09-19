@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c1xqukfjgdfkf" path="res://Amanda/medieval_tavern_props_pack/textures/tex_sack.png" id="9_y7kr0"]
 [ext_resource type="Texture2D" uid="uid://oq7sc7ifxcuh" path="res://Amanda/medieval_tavern_props_pack/textures/tex_shelf_wood.png" id="10_6j042"]
 [ext_resource type="PackedScene" uid="uid://bw73kprk7ptvn" path="res://Florian/PointsLogic/PictureSpot.tscn" id="10_28ddj"]
-[ext_resource type="Script" path="res://Florian/Map/dancing_people.gd" id="10_mbtuy"]
+[ext_resource type="Script" uid="uid://cu3fdbo1lelob" path="res://Florian/Map/dancing_people.gd" id="10_mbtuy"]
 [ext_resource type="Texture2D" uid="uid://bc165uwvli2g3" path="res://Amanda/medieval_tavern_props_pack/textures/planks.png" id="10_nbq5r"]
 [ext_resource type="PackedScene" uid="uid://k3ij7wrtwpms" path="res://Florian/table_0.tscn" id="10_ubr03"]
 [ext_resource type="PackedScene" uid="uid://m3sk1ustdixv" path="res://Florian/Props/tent.tscn" id="11_4etk5"]
@@ -37,10 +37,10 @@
 [ext_resource type="Texture2D" uid="uid://btvin3pkgvu3s" path="res://Amanda/medieval_tavern_props_pack/textures/tex_bar_counter.png" id="21_fese6"]
 [ext_resource type="AudioStream" uid="uid://yeqii4bqw3d5" path="res://Florian/Audio/oktoberfestambience.mp3.ogg" id="21_mmnkp"]
 [ext_resource type="PackedScene" uid="uid://b85ujwx0p8gvn" path="res://Florian/Props/door.tscn" id="22_bv6bj"]
-[ext_resource type="PackedScene" uid="uid://bfq21ks4r8gma" path="res://Florian/Entity/People/accor.tscn" id="23_0a0yf"]
-[ext_resource type="Script" path="res://Florian/Map/accor_animation.gd" id="24_ho8ja"]
-[ext_resource type="PackedScene" path="res://Nikita/finish_screen.tscn" id="30_s3xcw"]
-[ext_resource type="PackedScene" path="res://Nikita/pause_menu.tscn" id="31_fese6"]
+[ext_resource type="PackedScene" uid="uid://c4fw8rjct7vms" path="res://Florian/Entity/People/accor.tscn" id="23_0a0yf"]
+[ext_resource type="Script" uid="uid://btok1rqmtms4o" path="res://Florian/Map/accor_animation.gd" id="24_ho8ja"]
+[ext_resource type="PackedScene" uid="uid://dl42xs7anteub" path="res://Nikita/finish_screen.tscn" id="30_s3xcw"]
+[ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="31_fese6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uiso"]
 albedo_texture = ExtResource("1_kmmfq")

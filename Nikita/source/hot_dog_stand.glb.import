@@ -32,6 +32,15 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/72d858cf3e5e4d6d8a6b5046109fedbc_fbx/RootNode/Cylinder_003/Cylinder_003_HotDog_0": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2,
+"physics/shape_type": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

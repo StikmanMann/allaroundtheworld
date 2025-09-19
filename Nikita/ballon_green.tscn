@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmyvwjo2i5elb"]
 
-[ext_resource type="PackedScene" uid="uid://blrngycbh05y8" path="res://Nikita/source/hot_air_balloon_-_low_poly.glb" id="1_txx3l"]
-[ext_resource type="Texture2D" uid="uid://bxipawnco4bjm" path="res://Nikita/source/hot_air_balloon_-_low_poly_2.png" id="2_ajxfq"]
+[ext_resource type="PackedScene" uid="uid://dqtg4fdim4qay" path="res://Nikita/source/hot_air_balloon_-_low_poly.glb" id="1_txx3l"]
+[ext_resource type="Texture2D" uid="uid://hajc2poh7w2a" path="res://Nikita/source/hot_air_balloon_-_low_poly_2.png" id="2_ajxfq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38pwp"]
+cull_mode = 2
 albedo_texture = ExtResource("2_ajxfq")
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_txx3l")]

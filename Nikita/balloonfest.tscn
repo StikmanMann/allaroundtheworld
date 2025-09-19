@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://cge0bfktyd7ka"]
 
-[ext_resource type="Texture2D" uid="uid://c8bo7u0yr3cfj" path="res://Nikita/textures/golden_gate_hills_1k.png" id="1_dcn22"]
-[ext_resource type="PackedScene" uid="uid://c6sjs2nhsigfv" path="res://Nikita/source/ballons.glb" id="1_fqyqv"]
+[ext_resource type="Texture2D" uid="uid://b0ml0awb8t7yh" path="res://Nikita/textures/golden_gate_hills_1k.png" id="1_dcn22"]
+[ext_resource type="PackedScene" uid="uid://djdo6lntq4tq0" path="res://Nikita/source/ballons.glb" id="1_fqyqv"]
 [ext_resource type="Script" uid="uid://csuiro5uqp8m7" path="res://Nikita/scripts/balloonfest.gd" id="1_ojto3"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_akthd"]
 [ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="4_eb1mq"]
@@ -9,17 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://dl42xs7anteub" path="res://Nikita/finish_screen.tscn" id="7_xc4lk"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="8_kwais"]
 [ext_resource type="PackedScene" uid="uid://3vprlvn3n3gu" path="res://Nikita/picnic_full.tscn" id="9_5a716"]
-[ext_resource type="PackedScene" uid="uid://xam7fkrhx16w" path="res://Nikita/source/hot_dog_stand.glb" id="10_q5367"]
-[ext_resource type="PackedScene" uid="uid://dwmer4ulgmghu" path="res://Nikita/source/low_poly_school_bus.glb" id="11_o12ro"]
-[ext_resource type="PackedScene" uid="uid://civundydxciyf" path="res://Nikita/source/lowpoly_van_inspired_by_volkswagen_type_2.glb" id="12_etfuq"]
-[ext_resource type="PackedScene" uid="uid://dic0vrtydb3a4" path="res://Nikita/source/low_poly_pickup_truck_2.glb" id="13_pgrr1"]
-[ext_resource type="PackedScene" uid="uid://cwhefxcccxxon" path="res://Nikita/source/picnic_table_low-poly.glb" id="14_3unov"]
-[ext_resource type="PackedScene" uid="uid://blrngycbh05y8" path="res://Nikita/source/hot_air_balloon_-_low_poly.glb" id="14_pgrr1"]
+[ext_resource type="PackedScene" uid="uid://ccc8fvwnyfp3l" path="res://Nikita/source/hot_dog_stand.glb" id="10_q5367"]
+[ext_resource type="PackedScene" uid="uid://ocohifbltpm5" path="res://Nikita/source/low_poly_school_bus.glb" id="11_o12ro"]
+[ext_resource type="PackedScene" uid="uid://cnqjn6w0ila7e" path="res://Nikita/source/lowpoly_van_inspired_by_volkswagen_type_2.glb" id="12_etfuq"]
+[ext_resource type="PackedScene" uid="uid://y73k3pykd1y4" path="res://Nikita/source/low_poly_pickup_truck_2.glb" id="13_pgrr1"]
+[ext_resource type="PackedScene" uid="uid://ooildfqm5d5n" path="res://Nikita/source/picnic_table_low-poly.glb" id="14_3unov"]
+[ext_resource type="PackedScene" uid="uid://dqtg4fdim4qay" path="res://Nikita/source/hot_air_balloon_-_low_poly.glb" id="14_pgrr1"]
 [ext_resource type="PackedScene" uid="uid://d0luuh1qdcxwy" path="res://Nikita/ballon_red.tscn" id="15_d7t4y"]
 [ext_resource type="PackedScene" uid="uid://dmyvwjo2i5elb" path="res://Nikita/ballon_green.tscn" id="16_ydib1"]
-[ext_resource type="PackedScene" uid="uid://ci471hyswo5ys" path="res://Nikita/source/van_low_poly.glb" id="17_d2dy3"]
-[ext_resource type="PackedScene" uid="uid://ckvyi8s0hg38n" path="res://Nikita/source/simple_car_break_low_poly.glb" id="18_3unov"]
-[ext_resource type="PackedScene" uid="uid://cv0swxv8lntwp" path="res://Nikita/source/simple_car_low_poly.glb" id="19_34i2w"]
+[ext_resource type="PackedScene" uid="uid://brkw4n7a1t0u1" path="res://Nikita/source/van_low_poly.glb" id="17_d2dy3"]
+[ext_resource type="PackedScene" uid="uid://nepyioiql1p7" path="res://Nikita/source/simple_car_break_low_poly.glb" id="18_3unov"]
+[ext_resource type="PackedScene" uid="uid://dv7728isc44gi" path="res://Nikita/source/simple_car_low_poly.glb" id="19_34i2w"]
 [ext_resource type="Script" uid="uid://c8g6sb8ucm421" path="res://Nikita/scripts/path_follow_balloon.gd" id="20_34i2w"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eb1mq"]
@@ -54,7 +54,7 @@ environment = SubResource("Environment_akthd")
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -4.9729, 0, 0.821295)
 
 [node name="PlayerRigidbody" parent="." instance=ExtResource("2_akthd")]
-transform = Transform3D(-0.92239, 0, 0.38626, 0, 1, 0, -0.38626, 0, -0.92239, 24.3581, 1.08998, -30.0003)
+transform = Transform3D(-0.92239, 0, 0.38626, 0, 1, 0, -0.38626, 0, -0.92239, 24.3581, 1.35472, -30.0003)
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_eb1mq")]
 

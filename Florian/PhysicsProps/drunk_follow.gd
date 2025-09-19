@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 @export var item_want : RigidBody3D = null
-@export var speed : int = 10
+@export var speed : int = 3
 @onready var see_area: Area3D = $SeeArea
 
 var following_item : RigidBody3D = null

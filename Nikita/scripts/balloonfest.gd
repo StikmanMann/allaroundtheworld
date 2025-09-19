@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("take_picture"):
+		await PictureTakeablesArray.calcualtion_finished
 		finish()
 	if Input.is_action_just_pressed("pause"):
 		pause_menu()
@@ -49,6 +50,8 @@ func _on_menu_button_pressed():
 
 func _on_retry_button_pressed():
 	finish()
+	PictureTakeablesArray.picture_takables.clear()
+	PictureTakeablesArray.picture_spots.clear()
 	get_tree().reload_current_scene()
 
 func _on_exit_button_pressed():

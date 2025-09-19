@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl8vck80rei0u"]
+
+[ext_resource type="PackedScene" uid="uid://bcjf4td655ln8" path="res://Amanda/modern_lamp/scene.gltf" id="1_m1ufh"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_m1ufh")]
+
+[node name="Object_2" parent="Sketchfab_model/7602c25a876b4a43b1add19102b19932_obj_cleaner_materialmerger_gles" index="0"]
+visible = false

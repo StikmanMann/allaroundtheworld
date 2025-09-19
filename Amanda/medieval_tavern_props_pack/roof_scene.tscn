@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg7bbk825ux3u"]
+
+[ext_resource type="PackedScene" uid="uid://di573r8axb3cd" path="res://Amanda/medieval_tavern_props_pack/hut_with_thatched_pointed_roof.glb" id="1_uic7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uic7m"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_uic7m")]
+
+[node name="Cylinder_0" parent="Sketchfab_model/Root/Cylinder" index="0"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.5, 0, 0, 0.22705)
+
+[node name="Cylinder_1" parent="Sketchfab_model/Root/Cylinder" index="1"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/StaticBody3D" index="0"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 3.45504, 4.74406)
+shape = SubResource("BoxShape3D_uic7m")

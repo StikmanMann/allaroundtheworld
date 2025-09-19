@@ -1,0 +1,11 @@
+Model Information:
+* title:	China Street Models
+* source:	https://sketchfab.com/3d-models/china-street-models-571eb702c8ba413a9a83843fa5428c4a
+* author:	xzal139 (https://sketchfab.com/xzal139)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "China Street Models" (https://sketchfab.com/3d-models/china-street-models-571eb702c8ba413a9a83843fa5428c4a) by xzal139 (https://sketchfab.com/xzal139) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

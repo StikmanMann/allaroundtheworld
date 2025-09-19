@@ -1,0 +1,11 @@
+Model Information:
+* title:	fence
+* source:	https://sketchfab.com/3d-models/fence-b5a3d0b102ee43498c87bf80db94bc3e
+* author:	neos_nelia (https://sketchfab.com/neosnelia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "fence" (https://sketchfab.com/3d-models/fence-b5a3d0b102ee43498c87bf80db94bc3e) by neos_nelia (https://sketchfab.com/neosnelia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

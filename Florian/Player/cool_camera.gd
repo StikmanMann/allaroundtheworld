@@ -64,6 +64,7 @@ func _calculate_picture_objects():
 			label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 			label.fixed_size = true
 			label.top_level = true
+			label.no_depth_test = true
 			label.global_position = takeable.global_position
 			label.font_size = 100
 			label.pixel_size = 0.001
@@ -92,7 +93,7 @@ func _calculate_picture_objects():
 			label.position += Vector3(0, 1, 0)
 			total_points += points
 			total_points_multipliers *= takeable.points_multiplier
-			takeable.show_red_cicle()
+			#takeable.show_red_cicle()
 
 func _calculate_picture_spots():
 	for spot in PictureTakeablesArray.picture_spots:

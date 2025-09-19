@@ -1,31 +1,38 @@
-[gd_scene load_steps=36 format=3 uid="uid://cge0bfktyd7ka"]
+[gd_scene load_steps=77 format=3 uid="uid://cge0bfktyd7ka"]
 
 [ext_resource type="Texture2D" uid="uid://b0ml0awb8t7yh" path="res://Nikita/textures/golden_gate_hills_1k.png" id="1_dcn22"]
 [ext_resource type="PackedScene" uid="uid://djdo6lntq4tq0" path="res://Nikita/source/ballons.glb" id="1_fqyqv"]
 [ext_resource type="Script" uid="uid://csuiro5uqp8m7" path="res://Nikita/scripts/balloonfest.gd" id="1_ojto3"]
 [ext_resource type="PackedScene" uid="uid://crrco762ow56c" path="res://Florian/Player/PlayerRigidbody.tscn" id="2_akthd"]
-[ext_resource type="PackedScene" uid="uid://ci05g3ilu86xl" path="res://Nikita/pause_menu.tscn" id="4_eb1mq"]
+[ext_resource type="PackedScene" path="res://Nikita/pause_menu.tscn" id="4_eb1mq"]
 [ext_resource type="PackedScene" uid="uid://chwdbfp1bmoqc" path="res://Nikita/picnic.tscn" id="7_kwais"]
-[ext_resource type="PackedScene" uid="uid://dl42xs7anteub" path="res://Nikita/finish_screen.tscn" id="7_xc4lk"]
+[ext_resource type="PackedScene" path="res://Nikita/finish_screen.tscn" id="7_xc4lk"]
 [ext_resource type="PackedScene" uid="uid://c8gnb0kut2n5h" path="res://Florian/PointsLogic/point_thing.tscn" id="8_kwais"]
 [ext_resource type="PackedScene" uid="uid://3vprlvn3n3gu" path="res://Nikita/picnic_full.tscn" id="9_5a716"]
+[ext_resource type="Texture2D" uid="uid://bdwthflrykxj2" path="res://Amanda/Sprite assets/kid_sitting.png" id="9_utwfo"]
+[ext_resource type="Texture2D" uid="uid://dsgdgwwmky63i" path="res://Amanda/Sprite assets/guy_2_sitt.png" id="10_1ehj4"]
 [ext_resource type="PackedScene" uid="uid://ccc8fvwnyfp3l" path="res://Nikita/source/hot_dog_stand.glb" id="10_q5367"]
 [ext_resource type="PackedScene" uid="uid://ocohifbltpm5" path="res://Nikita/source/low_poly_school_bus.glb" id="11_o12ro"]
+[ext_resource type="Texture2D" uid="uid://c5sqc8jkjsvmk" path="res://Amanda/Sprite assets/girl_sitting.png" id="12_cb0kf"]
 [ext_resource type="PackedScene" uid="uid://cnqjn6w0ila7e" path="res://Nikita/source/lowpoly_van_inspired_by_volkswagen_type_2.glb" id="12_etfuq"]
 [ext_resource type="PackedScene" uid="uid://y73k3pykd1y4" path="res://Nikita/source/low_poly_pickup_truck_2.glb" id="13_pgrr1"]
 [ext_resource type="PackedScene" uid="uid://ooildfqm5d5n" path="res://Nikita/source/picnic_table_low-poly.glb" id="14_3unov"]
 [ext_resource type="PackedScene" uid="uid://dqtg4fdim4qay" path="res://Nikita/source/hot_air_balloon_-_low_poly.glb" id="14_pgrr1"]
+[ext_resource type="Texture2D" uid="uid://cvhuqx1h287yl" path="res://Amanda/Sprite assets/guy_c.png" id="15_cb0kf"]
 [ext_resource type="PackedScene" uid="uid://d0luuh1qdcxwy" path="res://Nikita/ballon_red.tscn" id="15_d7t4y"]
 [ext_resource type="PackedScene" uid="uid://dmyvwjo2i5elb" path="res://Nikita/ballon_green.tscn" id="16_ydib1"]
 [ext_resource type="PackedScene" uid="uid://brkw4n7a1t0u1" path="res://Nikita/source/van_low_poly.glb" id="17_d2dy3"]
+[ext_resource type="Texture2D" uid="uid://c2bjckk42lmdv" path="res://Amanda/Sprite assets/dudes_c.png" id="17_qxgd4"]
 [ext_resource type="PackedScene" uid="uid://nepyioiql1p7" path="res://Nikita/source/simple_car_break_low_poly.glb" id="18_3unov"]
+[ext_resource type="Texture2D" uid="uid://bvhk76ahol7ya" path="res://Amanda/Sprite assets/guy_sitting_bench.png" id="18_qxgd4"]
 [ext_resource type="PackedScene" uid="uid://dv7728isc44gi" path="res://Nikita/source/simple_car_low_poly.glb" id="19_34i2w"]
 [ext_resource type="Script" uid="uid://c8g6sb8ucm421" path="res://Nikita/scripts/path_follow_balloon.gd" id="20_34i2w"]
 [ext_resource type="PackedScene" uid="uid://c5552lenumx2j" path="res://Florian/Entity/People/saxophone.tscn" id="21_oq2w4"]
 [ext_resource type="Script" uid="uid://dvb3u2fiio68w" path="res://Nikita/scripts/path_follow_balloon_up.gd" id="22_hsesi"]
 [ext_resource type="PackedScene" uid="uid://bybsn53hd1mge" path="res://Florian/Entity/People/guys.tscn" id="23_cqpa7"]
-[ext_resource type="Script" uid="uid://be7duobvgkkeo" path="res://Nikita/scripts/path_follow_3d.gd" id="25_6exkg"]
-[ext_resource type="PackedScene" uid="uid://b56u6jt4qr0i6" path="res://Nikita/ballon_gold.tscn" id="25_rdcwi"]
+[ext_resource type="Script" path="res://Nikita/scripts/path_follow_3d.gd" id="25_6exkg"]
+[ext_resource type="PackedScene" path="res://Nikita/ballon_gold.tscn" id="25_rdcwi"]
+[ext_resource type="Texture2D" uid="uid://dmegsc0mu2j5l" path="res://Amanda/Sprite assets/wave.png" id="25_yrqvy"]
 [ext_resource type="AudioStream" uid="uid://cqbl4amwc7856" path="res://Nikita/source/frna-field-mountain-insects-grasshopper-flyers-with-light-wind-in-tree.mp3" id="27_r7sp0"]
 [ext_resource type="AudioStream" uid="uid://bu1o0ehw476w6" path="res://Nikita/source/6188e449e9fae91.mp3" id="28_jr03o"]
 
@@ -39,6 +46,208 @@ sky_material = SubResource("PanoramaSkyMaterial_eb1mq")
 background_mode = 2
 sky = SubResource("Sky_ojto3")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_58d0v"]
+atlas = ExtResource("9_utwfo")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnva5"]
+atlas = ExtResource("9_utwfo")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqr8s"]
+atlas = ExtResource("9_utwfo")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7e564"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58d0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnva5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqr8s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjk6v"]
+atlas = ExtResource("10_1ehj4")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha5ui"]
+atlas = ExtResource("10_1ehj4")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtb2c"]
+atlas = ExtResource("10_1ehj4")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwjme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjk6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha5ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtb2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbyk8"]
+atlas = ExtResource("12_cb0kf")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35qco"]
+atlas = ExtResource("12_cb0kf")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb2mf"]
+atlas = ExtResource("12_cb0kf")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fknh"]
+atlas = ExtResource("12_cb0kf")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bv28"]
+atlas = ExtResource("12_cb0kf")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5wjdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbyk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35qco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb2mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fknh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bv28")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a26po"]
+atlas = ExtResource("15_cb0kf")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_621xb"]
+atlas = ExtResource("15_cb0kf")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rndh"]
+atlas = ExtResource("15_cb0kf")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrqvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a26po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_621xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rndh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwtnj"]
+atlas = ExtResource("17_qxgd4")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynd22"]
+atlas = ExtResource("17_qxgd4")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwpgq"]
+atlas = ExtResource("17_qxgd4")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ewtx"]
+atlas = ExtResource("17_qxgd4")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pso0r"]
+atlas = ExtResource("17_qxgd4")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58d0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwtnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynd22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwpgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ewtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pso0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70jow"]
+atlas = ExtResource("18_qxgd4")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkf2a"]
+atlas = ExtResource("18_qxgd4")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnqda"]
+atlas = ExtResource("18_qxgd4")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2hfb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70jow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkf2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnqda")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Curve3D" id="Curve3D_3unov"]
 closed = true
 bake_interval = 14.83
@@ -47,6 +256,49 @@ _data = {
 "tilts": PackedFloat32Array(0, 0.44, -0.47, 0.315, 0.205, -0.16, 0)
 }
 point_count = 7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqlt0"]
+atlas = ExtResource("25_yrqvy")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fo54"]
+atlas = ExtResource("25_yrqvy")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0qkd"]
+atlas = ExtResource("25_yrqvy")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku2m6"]
+atlas = ExtResource("25_yrqvy")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t27t8"]
+atlas = ExtResource("25_yrqvy")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dl5u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqlt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fo54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0qkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku2m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t27t8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Curve3D" id="Curve3D_34i2w"]
 closed = true
@@ -101,11 +353,22 @@ metadata/_edit_use_anchors_ = true
 [node name="StaticObjects" type="Node" parent="."]
 
 [node name="Picnic1" parent="StaticObjects" instance=ExtResource("7_kwais")]
-transform = Transform3D(-0.983757, 0, 0.179506, 0, 1, 0, -0.179506, 0, -0.983757, 28.8148, -4.76837e-07, 9.0252)
+transform = Transform3D(-0.983757, 0, 0.179506, 0, 1, 0, -0.179506, 0, -0.983757, 28.8148, 0.00518751, 9.0252)
 
 [node name="PointThing" parent="StaticObjects/Picnic1" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.301177, 0, 1.49012e-08, 0, 0.211065, 0, -2.23517e-08, 0, 0.302563, 0.0501136, 0.310955, 0.00953996)
 points_name = "picnic"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticObjects/Picnic1"]
+transform = Transform3D(0.97659, 0, 0.21511, 0, 1, 0, -0.21511, 0, 0.97659, 0.510357, 0.489441, -0.159351)
+sorting_offset = 2.0
+pixel_size = 0.02
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7e564")
+autoplay = "default"
 
 [node name="Picnic2" parent="StaticObjects" instance=ExtResource("7_kwais")]
 transform = Transform3D(-0.98248, 0, 0.18637, 0, 1, 0, -0.18637, 0, -0.98248, 26.6857, 0, 14.7592)
@@ -114,6 +377,16 @@ transform = Transform3D(-0.98248, 0, 0.18637, 0, 1, 0, -0.18637, 0, -0.98248, 26
 transform = Transform3D(0.301177, 0, 1.49012e-08, 0, 0.211065, 0, -2.23517e-08, 0, 0.302563, 0.0501136, 0.310955, 0.00953996)
 points_name = "picnic"
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticObjects/Picnic2"]
+transform = Transform3D(-0.178613, 0, 0.983919, 0, 1, 0, -0.983919, 0, -0.178613, 0.280956, 0.787231, -0.375932)
+sorting_offset = 2.0
+pixel_size = 0.03
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_hwjme")
+
 [node name="PicnicFull" parent="StaticObjects" instance=ExtResource("9_5a716")]
 transform = Transform3D(-0.898235, 0, -0.439516, 0, 1, 0, 0.439516, 0, -0.898235, 27.1366, 0, 12.3341)
 
@@ -121,6 +394,17 @@ transform = Transform3D(-0.898235, 0, -0.439516, 0, 1, 0, 0.439516, 0, -0.898235
 transform = Transform3D(0.475593, 0, 7.45058e-08, 0, 0.279239, 0, 1.49012e-08, 0, 0.422141, 0, 0.182704, 0)
 points_worth = 20
 points_name = "picnic full"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticObjects/PicnicFull"]
+transform = Transform3D(0.800585, 0, -0.599219, 0, 1, 0, 0.599219, 0, 0.800585, 0.386286, 0.760071, -0.187958)
+sorting_offset = 2.0
+pixel_size = 0.03
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_5wjdr")
+autoplay = "default"
 
 [node name="PicnicFull2" parent="StaticObjects" instance=ExtResource("9_5a716")]
 transform = Transform3D(-0.403274, 0, -0.915079, 0, 1, 0, 0.915079, 0, -0.403274, 27.1891, -2.38419e-07, 17.253)
@@ -154,6 +438,16 @@ transform = Transform3D(1.71479, 0, 0, 0, 1, 0, 1.19209e-07, 0, 1.72247, 0, 2.05
 points_worth = 20
 points_name = "bus"
 
+[node name="guy2" type="AnimatedSprite3D" parent="StaticObjects/SchoolBus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71585, 0.573848, 3.60889)
+pixel_size = 0.05
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_yrqvy")
+autoplay = "default"
+
 [node name="Van" parent="StaticObjects" instance=ExtResource("12_etfuq")]
 transform = Transform3D(0.798467, 0, -0.602038, 0, 1, 0, 0.602038, 0, 0.798467, 46.4975, 1.14667, -25.0098)
 
@@ -162,12 +456,34 @@ transform = Transform3D(0.51424, 0, 1.78814e-07, 0, 1, 0, -8.9407e-08, 0, 1.3719
 points_worth = 20
 points_name = "van"
 
+[node name="dudes_c2" type="AnimatedSprite3D" parent="StaticObjects/Van"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35405, -0.327026, -1.19209e-07)
+sorting_offset = 2.0
+pixel_size = 0.03
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_58d0v")
+autoplay = "default"
+
 [node name="Car" parent="StaticObjects" instance=ExtResource("13_pgrr1")]
 transform = Transform3D(0.96896, 0, 0.247219, 0, 1, 0, -0.247219, 0, 0.96896, 55.0955, -1.86265e-07, -19.3263)
 
 [node name="PointThing" parent="StaticObjects/Car" instance=ExtResource("8_kwais")]
 transform = Transform3D(0.729512, 0, 7.45058e-09, 0, 0.618621, 0, 7.45058e-08, 0, 0.442139, -0.0704575, 1.51319, 0.276157)
 points_name = "car"
+
+[node name="dudes_c2" type="AnimatedSprite3D" parent="StaticObjects/Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00863, 0.831543, -8.9407e-08)
+sorting_offset = 2.0
+pixel_size = 0.03
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_58d0v")
+autoplay = "default"
 
 [node name="Car2" parent="StaticObjects" instance=ExtResource("13_pgrr1")]
 transform = Transform3D(0.943726, 0, 0.330729, 0, 1, 0, -0.330729, 0, 0.943726, 56.7966, 2.90573e-07, -35.3262)
@@ -185,6 +501,15 @@ points_name = "car"
 
 [node name="PicnicTable" parent="StaticObjects" instance=ExtResource("14_3unov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3132, 7.45058e-07, 8.65067)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticObjects/PicnicTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555664, -0.485596)
+pixel_size = 0.02
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_y2hfb")
 
 [node name="PicnicTable2" parent="StaticObjects" instance=ExtResource("14_3unov")]
 transform = Transform3D(0.999156, 0, 0.0410735, 0, 1, 0, -0.0410735, 0, 0.999156, 21.3132, 7.45058e-07, 10.9548)
@@ -256,12 +581,21 @@ transform = Transform3D(2.61643, 0, 0, 0, 6.71267, 0, 0, 0, 2.85342, 0, 9.7302, 
 points_worth = 100
 points_name = "blue balloon"
 
+[node name="wave_girl" type="AnimatedSprite3D" parent="Balloons/Path3D/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976686, 0)
+pixel_size = 0.03
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dl5u8")
+
 [node name="Path3D2" type="Path3D" parent="Balloons"]
 transform = Transform3D(-0.173545, 0, 0.984826, 0, 1, 0, -0.984826, 0, -0.173545, 37.8324, 0.0518169, -5.40548)
 curve = SubResource("Curve3D_3unov")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D2"]
-transform = Transform3D(-0.0958825, -0.018765, 0.995208, -0.192064, 0.981379, -1.11758e-08, -0.976683, -0.191145, -0.0977011, -64.1844, 20, -27.8943)
+transform = Transform3D(-0.0958825, -0.018765, 0.995207, -0.192064, 0.981379, -1.11758e-08, -0.976683, -0.191145, -0.0977011, -64.1844, 20, -27.8943)
 progress = 91.2869
 rotation_mode = 1
 script = ExtResource("20_34i2w")
@@ -313,7 +647,7 @@ points_worth = 100
 points_name = "blue balloon"
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Balloons/Path3D4"]
-transform = Transform3D(0.963824, 0.0899486, 0.250846, -0.0929527, 0.995663, 0.000130762, -0.249747, -0.0234432, 0.968018, 4.18684, -4.32774, -53.3213)
+transform = Transform3D(0.963824, 0.0899486, 0.250846, -0.0929526, 0.995663, 0.000130762, -0.249747, -0.0234432, 0.968018, 4.18684, -4.32774, -53.3213)
 progress = 89.7982
 rotation_mode = 1
 script = ExtResource("22_hsesi")
@@ -330,7 +664,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2645, 36.366, -1.58754)
 curve = SubResource("Curve3D_oq2w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D5"]
-transform = Transform3D(-0.762206, 0, 0.647327, 0, 0.999999, 0, -0.647325, 0, -0.762209, -2.69563, 23.5, 47.7876)
+transform = Transform3D(-0.762205, 0, 0.647328, 0, 0.999999, 0, -0.647326, 0, -0.762208, -2.69561, 23.4999, 47.7876)
 progress = 58.6301
 rotation_mode = 1
 script = ExtResource("25_6exkg")

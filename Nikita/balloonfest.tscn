@@ -313,7 +313,7 @@ points_worth = 100
 points_name = "blue balloon"
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Balloons/Path3D4"]
-transform = Transform3D(0.963824, 0.0899486, 0.250846, -0.0929527, 0.995663, 0.000130762, -0.249747, -0.0234432, 0.968018, 4.18684, -4.32774, -53.3213)
+transform = Transform3D(0.963823, 0.0899486, 0.250846, -0.0929526, 0.995663, 0.000130762, -0.249747, -0.0234432, 0.968018, 4.18684, -4.32774, -53.3213)
 progress = 89.7982
 rotation_mode = 1
 script = ExtResource("22_hsesi")
@@ -330,7 +330,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2645, 36.366, -1.58754)
 curve = SubResource("Curve3D_oq2w4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Balloons/Path3D5"]
-transform = Transform3D(-0.762206, 0, 0.647327, 0, 0.999999, 0, -0.647325, 0, -0.762209, -2.69563, 23.5, 47.7876)
+transform = Transform3D(-0.762205, 0, 0.647328, 0, 0.999999, 0, -0.647326, 0, -0.762208, -2.69561, 23.4999, 47.7876)
 progress = 58.6301
 rotation_mode = 1
 script = ExtResource("25_6exkg")

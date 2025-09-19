@@ -850,7 +850,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_pk4g6")
 
 [node name="PlayerRigidbody" parent="." instance=ExtResource("2_82wr0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 1, -9)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 1, -9)
 
 [node name="Stage" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
@@ -1149,7 +1149,6 @@ environment = SubResource("Environment_d5eeg")
 [node name="DrunkFollow" parent="." node_paths=PackedStringArray("item_want") instance=ExtResource("20_20xaa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, -8)
 item_want = NodePath("../Physics/Beer/GoldenBeer")
-speed = 3
 
 [node name="AllTables" type="Node3D" parent="."]
 

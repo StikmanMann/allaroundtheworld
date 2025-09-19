@@ -38,7 +38,7 @@ size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-color = Color(0.905882, 0.756863, 0.654902, 0.427451)
+color = Color(0.196078, 0.196078, 0.196078, 0.941176)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2

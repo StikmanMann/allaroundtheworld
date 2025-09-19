@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var pickup_ray: RayCast3D = $PickupRay
 
-@export var max_heaviness: float = 30.0      # max object mass allowed
+@export var max_heaviness: float = 20.0      # max object mass allowed
 @export var hold_distance: float = 3.0       # how far in front of player to hold
 @export var hold_strength: float = 8.0       # how strongly we pull the object toward target
 @export var damping: float = 20.0             # smoothness of movement
